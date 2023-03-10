@@ -1,54 +1,116 @@
-.App {  
-   padding: 5rem 1rem;
-   background-color: black;
-   color:rgba(211, 211, 211, 0.635);
-   font-family: 'Lato', Verdana, Geneva, Tahoma, sans-serif;
-   font-size: 1.3rem;
-   font-weight: 100;
-   line-height: 1.7;
-  }
-
-.movieList{
-  width:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 3rem;
+:root {
+  --coral: #F05D5E;
+  --teal: #0F7173;
+  --light: #E7ECEF;
+  --white: #ffffff;
+  --dark: #272932;
+  --camel: #D8A47F;
+  --bluemsh: #4174c0;
+  --reddy: #d61010;
+  --pinky: #eb30b3;
+  --navy: #1327dd;
+  --melon: #e9ec08;
+  --greensih: #0dcc1d;
 }
 
-.movieList__item{
-  width:15rem;
-  height:25rem;
+.App {
+
+  padding: 5rem 1rem;
+  background-color: black;
+  color: rgba(211, 211, 211, 0.635);
+  font-family: 'Lato', Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 100;
+  line-height: 1.7;
+
+}
+
+.header {
+
+  border: 0.15rem solid;
+
+}
+
+.text__center {
+  text-align: center;
+}
+
+.navlink {
+
+  display: inline-block;
+  padding: 0px 10px;
+  text-transform: uppercase;
+
+}
+
+
+
+.link {
+
+  text-decoration: none;
+  align-items: center;
+  vertical-align: middle;
+
+}
+
+.link--active {
+
+  color: var(--greensih);
+  font-weight: bold;
+  text-decoration: none;
+  vertical-align: middle;
+
+}
+
+.movieList {
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+
+}
+
+.movieList__item {
+
+  width: 15rem;
+  height: 25rem;
   list-style: none;
-  border:.1px solid rgba(194, 192, 192, 0.541);
-  box-shadow: rgb(255, 255, 255,.2) 0px 0px 1rem .2rem;
+  border: .1px solid rgba(194, 192, 192, 0.541);
+  box-shadow: rgb(255, 255, 255, .2) 0px 0px 1rem .2rem;
   border-radius: 3rem;
   -webkit-border-radius: 3rem;
   -moz-border-radius: 3rem;
   -ms-border-radius: 3rem;
   -o-border-radius: 3rem;
+
 }
 
-.movieList__img-container{
+.movieList__img-container {
+
   height: 15rem;
-  padding:2rem;
+  padding: 2rem;
   background-color: #3f4b945c;
-    border-radius: 3rem;
+  border-radius: 3rem;
   -webkit-border-radius: 3rem;
   -moz-border-radius: 3rem;
   -ms-border-radius: 3rem;
   -o-border-radius: 3rem;
-  
+
 }
 
-.movieList__img{
-   height:100%;
+.movieList__img {
+
+  height: 100%;
+
 }
 
-.movieList__heading{
-  width:100%;
-   text-align: center;
-   word-wrap: break-word;
+.movieList__heading {
+
+  width: 100%;
+  text-align: center;
+  word-wrap: break-word;
 
 }

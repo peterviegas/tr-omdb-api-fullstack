@@ -1,0 +1,87 @@
+:root {
+    --coral: #F05D5E;
+    --teal: #0F7173;
+    --light: #E7ECEF;
+    --white: #ffffff;
+    --dark: #272932;
+    --camel: #D8A47F;
+    --bluemsh: #4174c0;
+    --reddy: #d61010;
+    --pinky: #eb30b3;
+    --navy: #1327dd;
+    --melon: #e9ec08;
+    --greensih: #0dcc1d;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(142, 156, 160, 0.493);
+    margin: 8px;
+}
+
+.about-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+}
+
+.container {
+    padding: 0 16px;
+}
+
+.container::after,
+.row::after {
+
+    display: inline-block;
+
+}
+
+.title {
+    color: var(--bluemsh);
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: #000;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
