@@ -1,6 +1,6 @@
 
 import React, { useContext, useEffect, useState } from "react";
-import { OmbdApiFetch } from "../Fetch/OmbdApiFetch";
+import { OmdbApiFetch } from "../Fetch/OmbdApiFetch";
 import { MovieResponseType,MovieCardType,defaultMovieCard } from "./MovieType.type";
 import ErrorComponent from "../ErrorHandler/ErrorComponent";
 import { ErrorMessagesAPI } from "../ErrorHandler/ErrorMessages";
@@ -8,6 +8,7 @@ import { MoviesContext} from "./Context/MoviesContext";
 
 const { errorFetch } = ErrorMessagesAPI;
 
+//id is imbdId from Ombd json
 const id = 'tt0107362';
 const url: string = `http://www.omdbapi.com/?i=${id}&type=movie&apikey=3fe67f82`
 
@@ -19,7 +20,7 @@ const MovieCard: React.FC = () => {
 
     const fetchMovie = async () => {
         setErrorMsg("");
-    const movieResponse= await OmbdApiFetch<MovieResponseType>(url);
+    const movieResponse= await OmdbApiFetch<MovieResponseType>(url);
         
         
         if (movieResponse && typeof movieResponse !== "string") {

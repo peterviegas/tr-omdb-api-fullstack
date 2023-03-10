@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { OmbdApiFetch } from "../Fetch/OmbdApiFetch";
+import { OmdbApiFetch } from "../Fetch/OmbdApiFetch";
 import { MovieType } from "./MovieType.type";
 import ErrorComponent from "../ErrorHandler/ErrorComponent";
 import { ErrorMessagesAPI } from "../ErrorHandler/ErrorMessages";
@@ -32,7 +32,7 @@ const MovieList: React.FC = () => {
 
     const fetchMovie = async () => {
         setErrorMsg("");
-    const movieResponse= await OmbdApiFetch<Array<MovieType>>(url);
+    const movieResponse= await OmdbApiFetch<Array<MovieType>>(url);
     console.log(movieResponse)
   
         if (movieResponse && typeof movieResponse !== "string") {

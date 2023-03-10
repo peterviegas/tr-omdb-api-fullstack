@@ -3,7 +3,7 @@
 import { ErrorMessagesAPI } from '../ErrorHandler/ErrorMessages'
 const { error404, error500, errorFetch } = ErrorMessagesAPI
 
-export const OmbdApiFetch = async <T>(url: string): Promise<T | string | undefined> => {
+export const OmdbApiFetch = async <T>(url: string): Promise<T | string | undefined> => {
     try {
         const response: Response = await fetch(url)
 
