@@ -1,4 +1,54 @@
-.App {
-  text-align: center;
+.App {  
+   padding: 5rem 1rem;
+   background-color: black;
+   color:rgba(211, 211, 211, 0.635);
+   font-family: 'Lato', Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 1.3rem;
+   font-weight: 100;
+   line-height: 1.7;
+  }
+
+.movieList{
+  width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
 }
 
+.movieList__item{
+  width:15rem;
+  height:25rem;
+  list-style: none;
+  border:.1px solid rgba(194, 192, 192, 0.541);
+  box-shadow: rgb(255, 255, 255,.2) 0px 0px 1rem .2rem;
+  border-radius: 3rem;
+  -webkit-border-radius: 3rem;
+  -moz-border-radius: 3rem;
+  -ms-border-radius: 3rem;
+  -o-border-radius: 3rem;
+}
+
+.movieList__img-container{
+  height: 15rem;
+  padding:2rem;
+  background-color: #3f4b945c;
+    border-radius: 3rem;
+  -webkit-border-radius: 3rem;
+  -moz-border-radius: 3rem;
+  -ms-border-radius: 3rem;
+  -o-border-radius: 3rem;
+  
+}
+
+.movieList__img{
+   height:100%;
+}
+
+.movieList__heading{
+  width:100%;
+   text-align: center;
+   word-wrap: break-word;
+
+}
