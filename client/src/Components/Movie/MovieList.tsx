@@ -1,12 +1,10 @@
-
-import React, { useEffect, useState } from "react";
-import { OmdbApiFetch } from "../Fetch/OmbdApiFetch";
-import { MovieType } from "./MovieType.type";
-import ErrorComponent from "../ErrorHandler/ErrorComponent";
-import { ErrorMessagesAPI } from "../ErrorHandler/ErrorMessages";
-import MoviesContextProvider from "./Context/MoviesContextProvider";
+import React, { useEffect, useState } from 'react';
+import { OmdbApiFetch } from '../Fetch/OmbdApiFetch';
+import { MovieType } from './MovieType.type';
+import ErrorComponent from '../ErrorHandler/ErrorComponent';
+import { ErrorMessagesAPI } from '../ErrorHandler/ErrorMessages';
+import MoviesContextProvider from './Context/MoviesContextProvider';
 //import { NavLink } from "react-router-dom";
-
 
 //const url =  `http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`
 
@@ -21,70 +19,72 @@ import MoviesContextProvider from "./Context/MoviesContextProvider";
 // {Title: 'Class Action', Year: '1991', imdbID: 'tt0101590', Type: 'movie', Poster: 'https://m.media-amazon.com/images/M/MV5BNWY5Mjk4Zm…zA3MDIzXkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_SX300.jpg'}]
 
 const MovieList: React.FC = () => {
-
     const [movies, setMovies] = useState<Array<MovieType>>([]);
-    const [errorMsg, setErrorMsg] = useState<string>("");
-
-
+    const [errorMsg, setErrorMsg] = useState<string>('');
 
     const { errorFetch } = ErrorMessagesAPI;
-    const url: string = `http://www.omdbapi.com/?s=spider&type=movie&apikey=3fe67f82`
+    const url: string = `http://www.omdbapi.com/?s=spider&type=movie&apikey=3fe67f82`;
 
     const fetchMovie = async () => {
-        setErrorMsg("");
-    const movieResponse= await OmdbApiFetch<Array<MovieType>>(url);
-    console.log(movieResponse)
-  
-        if (movieResponse && typeof movieResponse !== "string") {
-            const movieArray: Array<MovieType> = movieResponse.map((movie :MovieType) => {
-            const { Title, Year, imdbID, Type,Poster} = movie;
-            return { Title: Title,Year: Year,imdbID:imdbID,Type:Type, Poster:Poster};      
-        });
-    setMovies(movieArray);
-        } else if(!movieResponse){
-           setErrorMsg(errorFetch); 
-        }  
-        else {
+        setErrorMsg('');
+        const movieResponse = await OmdbApiFetch<Array<MovieType>>(url);
+        console.log(movieResponse);
+
+        if (movieResponse && typeof movieResponse !== 'string') {
+            const movieArray: Array<MovieType> = movieResponse.map(
+                (movie: MovieType) => {
+                    const { Title, Year, imdbID, Type, Poster } = movie;
+                    return {
+                        Title: Title,
+                        Year: Year,
+                        imdbID: imdbID,
+                        Type: Type,
+                        Poster: Poster,
+                    };
+                }
+            );
+            setMovies(movieArray);
+        } else if (!movieResponse) {
+            setErrorMsg(errorFetch);
+        } else {
             console.log(movieResponse);
             setErrorMsg(movieResponse);
-        console.log("error");
-    }   
-}
+            console.log('error');
+        }
+    };
 
-useEffect(()=>{
-    fetchMovie();
-}, [])
-    
+    useEffect(() => {
+        fetchMovie();
+    }, []);
 
     return (
         <MoviesContextProvider>
-          <div>
-                <ul className="movieList">
-                {
-                    movies.map(movie => {
-                        const { Title, Year, imdbID, Poster} = movie;
+            <div>
+                <ul className='movieList'>
+                    {movies.map((movie) => {
+                        const { Title, Year, imdbID, Poster } = movie;
                         return (
-                            <li key={imdbID} className="movieList__item">
+                            <li key={imdbID} className='movieList__item'>
                                 {/* This could be a NavLink to=`/watch/${imdbID}` */}
-                                <a href="./">
-                                    <div className="movieList__img-container">
-                                    <img className="movieList__img" src={Poster} alt={ Title} /> 
-                                    </div>    
-                                    <h6 className="movieList__heading">{`${Title}, ${Year}`}</h6>
-                                </a>      
+                                <a href='./'>
+                                    <div className='movieList__img-container'>
+                                        <img
+                                            className='movieList__img'
+                                            src={Poster}
+                                            alt={Title}
+                                        />
+                                    </div>
+                                    <h6 className='movieList__heading'>{`${Title}, ${Year}`}</h6>
+                                </a>
                             </li>
-                        )
-                    })
-                }
+                        );
+                    })}
                 </ul>
-                {
-                 errorMsg && <ErrorComponent>{errorMsg}</ErrorComponent>
-                }
-          </div>)
+                {errorMsg && <ErrorComponent>{errorMsg}</ErrorComponent>}
+            </div>
+            )
         </MoviesContextProvider>
-    )
-   
-}
+    );
+};
 
 export default MovieList;
-
