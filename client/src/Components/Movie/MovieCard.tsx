@@ -82,6 +82,9 @@ const MovieCard: React.FC = () => {
     return (
         <div className='movieCard'>
             <div className='moverCard__row'>
+                <div className='movieCard__imgBox'>
+                    <img src={selectedMovie.Poster} alt={selectedMovie.Title} />
+                </div>
                 <div className='movieCard__detailBox'>
                     <h6 className='movieCard__heading'>
                         {selectedMovie.Title}
@@ -104,9 +107,6 @@ const MovieCard: React.FC = () => {
                     <p className='movieCard__description'>
                         {selectedMovie.Plot}
                     </p>
-                </div>
-                <div className='movieCard__imgBox'>
-                    <img src={selectedMovie.Poster} alt={selectedMovie.Title} />
                 </div>
             </div>
             <div className='movieCard__row'>
