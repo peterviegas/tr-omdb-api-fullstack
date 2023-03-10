@@ -1,7 +1,8 @@
-import express from 'express'
-import * as movieController from '../controllers/movie_controller'
+import express from 'express';
+import * as movieController from '../controllers/movie_controller';
 
-export const router = express.Router()
+export const router = express.Router();
 router.get('/', (req, res) => {
-    res.send('Welcome to the Movie API!')
-})
+    res.send('Welcome to the Movie API!');
+});
+router.get('/search', movieController.getMovie);
