@@ -1,0 +1,21 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   background-image: $bg-main;
+   background-repeat: no-repeat;
+   background-color: $color-black;
+   word-spacing: .5rem;
+}
+
+.App {
+   padding: 5rem 1rem;
+   color: rgba(211, 211, 211, 0.635);
+   font-family: 'Lato', Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 1.3rem;
+   font-weight: 100;
+   line-height: 1.7;
+}
