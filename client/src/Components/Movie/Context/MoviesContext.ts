@@ -1,15 +1,15 @@
 
 import { createContext } from "react";
-import { MovieType } from "../MovieType.type";
+import { MovieType } from "../Type/MovieType.type";
 
-interface MoviesContextType {
+export interface MoviesContextType {
     movies: Array<MovieType>;
-    setMovies: (movies: Array<MovieType>) => void
+    errorMsg: string;
 }
 
 export const MoviesContext = createContext<MoviesContextType>({
     movies: [],
-    setMovies: () => { }
+    errorMsg: ""
 });
 
 

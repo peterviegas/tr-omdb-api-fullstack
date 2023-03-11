@@ -68,6 +68,7 @@ export const defaultMovieCard = {
     imdbID: "",
     imdbRating: "",
     imdbVotes: "",
+
 }
 
 export type MovieType = {
