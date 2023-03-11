@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { OmbdApiFetch } from './OmbdApiFetch';
+import { OmdbApiFetch } from './OmbdApiFetch';
 import { setupServer } from 'msw/node';
 import { rest } from 'msw';
 import App from '../../App';
-import { MovieType } from '../Movie/MovieType.type';
+import { MovieType } from '../Movie/Type/MovieType.type';
 
 const genre = 'action';
 const server = setupServer(
