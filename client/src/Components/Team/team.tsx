@@ -6,7 +6,7 @@ const ComponentTeam: React.FC = () => (
 
     < >
 
-        <body>
+        <div className="componentBody">
 
             <h2 className="text__center"> Our Team </h2>
 
@@ -16,7 +16,7 @@ const ComponentTeam: React.FC = () => (
 
             <ComponentTeamPage />
 
-        </body>
+        </div>
 
 
 

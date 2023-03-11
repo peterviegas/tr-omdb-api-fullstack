@@ -5,7 +5,7 @@ const ComponentTeamPage: React.FC = () => (
 
     < >
 
-        <body>
+        <div>
 
             <div className="row">
                 <div className="column">
@@ -45,6 +45,7 @@ const ComponentTeamPage: React.FC = () => (
                         <div className="movieList__img-container">
                             <img className="movieList__img" src={require('../../images/peter.jpg')} alt="Glen" />
                         </div>
+
                         <div className="container">
                             <h2>Glen Dovey</h2>
                             <p className="title">CEO & Founder</p>
@@ -61,6 +62,7 @@ const ComponentTeamPage: React.FC = () => (
                         <div className="movieList__img-container">
                             <img className="movieList__img" src={require('../../images/peter.jpg')} alt="Cem" />
                         </div>
+
                         <div className="container">
                             <h2>Cem Saydam</h2>
                             <p className="title">CEO & Founder</p>
@@ -71,7 +73,7 @@ const ComponentTeamPage: React.FC = () => (
                 </div>
             </div>
 
-        </body>
+        </div>
 
 
 

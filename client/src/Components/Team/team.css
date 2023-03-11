@@ -13,6 +13,16 @@
     --greensih: #0dcc1d;
 }
 
+
+.componentBody {
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -31,8 +41,13 @@ html {
 .column {
     float: left;
     width: 25%;
-    margin-bottom: 16px;
-    padding: 0 8px;
+
+    padding: 10 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
 }
 
 
