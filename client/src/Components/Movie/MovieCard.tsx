@@ -5,6 +5,7 @@ import {
     MovieCardType,
     MovieResponseType,
 } from './Type/MovieType.type';
+import { baseUrl } from '../Config/baseURL';
 import ErrorComponent from '../ErrorHandler/ErrorComponent';
 import { ErrorMessagesAPI } from '../ErrorHandler/ErrorMessages';
 

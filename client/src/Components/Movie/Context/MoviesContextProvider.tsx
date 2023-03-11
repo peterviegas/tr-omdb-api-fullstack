@@ -3,6 +3,7 @@ import { MoviesContext } from './MoviesContext';
 import { MovieType } from '../Type/MovieType.type';
 import { OmdbApiFetch } from '../../Fetch/OmbdApiFetch';
 import { ErrorMessagesAPI } from '../../ErrorHandler/ErrorMessages';
+import { baseUrl } from '../../Config/baseURL';
 
 interface MoviesProviderProp {
     children: React.ReactNode;
@@ -13,8 +14,8 @@ const MoviesContextProvider: React.FC<MoviesProviderProp> = ({ children }) => {
     const [errorMsg, setErrorMsg] = useState<string>('');
 
     const { errorFetch } = ErrorMessagesAPI;
-    const url: string = `http://www.omdbapi.com/?s=spider&type=movie&apikey=3fe67f82`;
-
+    //const url: string = `http://www.omdbapi.com/?s=spider&type=movie&apikey=3fe67f82`;
+    const url: string = `${baseUrl}/api/v1/search?title=spiderman`;
     const fetchMovie = async () => {
         setErrorMsg('');
         const movieResponse = await OmdbApiFetch<Array<MovieType>>(url);

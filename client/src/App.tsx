@@ -8,8 +8,8 @@ const App: React.FC = () => {
     return (
         <div className='App'>
             <MoviesContextProvider>
-                <MoviePage />
-                {/* <MovieList /> */}
+                {/* <MoviePage /> */}
+                <MovieList />
             </MoviesContextProvider>
         </div>
     );
