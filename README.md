@@ -27,11 +27,7 @@ git clone https://github.com/glend1/tr-omdb-api-fullstack/
 Make sure you have a new version of node installed on your computer then run
 
 ```
-npm install
-# navigate to the /client/ folder
-npm install
-# navigate to the /server/ folder
-npm install
+npm run custom-install
 ```
 
 you must also populate `.env.local` in `server/` with the following key
