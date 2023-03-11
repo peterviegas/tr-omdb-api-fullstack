@@ -1,14 +1,12 @@
 
-import { MovieType } from '../Movie/MovieType.type'
+
 import { ErrorMessagesAPI } from '../ErrorHandler/ErrorMessages'
 const { error404, error500, errorFetch } = ErrorMessagesAPI
 
-//Fetch json from Ombd
-export const OmbdApiFetch = async (genre: string): Promise<Array<MovieType> | string | undefined> => {
+export const OmdbApiFetch = async <T>(url: string): Promise<T | string | undefined> => {
     try {
-        const response: Response = await fetch(
-            `http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`
-        )
+        const response: Response = await fetch(url)
+
         console.log(response);
         if (!response.ok) {
             if (response.status === 404) throw new Error(error404)
@@ -18,12 +16,15 @@ export const OmbdApiFetch = async (genre: string): Promise<Array<MovieType> | st
             }
         }
 
-
         const data = await response.json()
 
-        const { Search } = data;
+        if (data.Search) {
+            const { Search } = data;
+            return Search;
+        }
 
-        return Search;
+        return data;
+
 
     } catch (err: unknown) {
         let message: string = "unknown error";
@@ -31,4 +32,31 @@ export const OmbdApiFetch = async (genre: string): Promise<Array<MovieType> | st
         return message;
     }
 
+}
+export type MovieResponseType = {
+    Title: string;
+    Year: string;
+    Rated: string;
+    Released: string;
+    Runtime: string;
+    Genre: string;
+    Director: string;
+    Writer: string;
+    Actors: string;
+    Plot: string;
+    Language: string;
+    Country: string;
+    Awards: string;
+    Poster: string;
+    Ratings: string;
+    Metascore: string;
+    imdbRating: string;
+    imdbVotes: string;
+    imdbID: string;
+    Type: string;
+    DVD: string;
+    BoxOffice: string;
+    Production: string;
+    Website: string;
+    Response: boolean;
 }
