@@ -1,8 +1,5 @@
 {
-    "include": [
-        "./src/**/*",
-        "../client/src/Components/ErrorHandler/ErrorMessages.ts"
-    ],
+    "include": ["./src/**/*"],
     "exclude": ["node_modules", "**/*.test.ts"],
     "compilerOptions": {
         "strict": true /* Enable all strict type-checking options. */,
