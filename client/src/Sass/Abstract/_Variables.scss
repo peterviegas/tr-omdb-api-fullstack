@@ -1,0 +1,32 @@
+$color-clouds: #ecf0f1;
+
+$color-white: #ffffff;
+$color-white--light: rgba(255, 255, 255, 0.7);
+$color-white--lighter: rgba(255, 255, 255, 0.2);
+
+$color-black: #000;
+$color-black--light: rgba(0, 0, 0, 0.6);
+$color-black--lighter: rgba(0, 0, 0, 0.3);
+
+$color-grey: #828181;
+
+$color-blue: #4b7bec;
+$color-blue--light: rgba(75, 123, 236, 0.3);
+
+$color-error: #f44336;
+
+$box-shadow--small: 0 0 1rem 0.2rem rgba(255, 255, 255, 0.2);
+$box-shadow--medium: 0 0 0.7rem 0.2rem rgba(255,
+        255,
+        255, 0.8);
+$box-shadow--btn: 0 0 0.2rem 0.2rem rgba(255,
+        255,
+        255, 0.2);
+$box-shadow--btn-white: 0 0 0.6rem 0.05rem rgba(255,
+        255,
+        255, 0.2);
+$box-shadow--btn-blue: 0 0 0.6rem 0.05rem rgba(75,
+        123,
+        236, 0.7);
+
+$bg-main: linear-gradient(360deg, rgba(0, 0, 0, 1) 33%, rgba(0, 0, 0, 0.7) 100%), url('./Images/bg-1.jpg');

@@ -1,0 +1,49 @@
+.moviePage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 3rem;
+
+    @include respond(large-tab) {
+        padding: 5rem .5rem;
+    }
+
+    &__heading-3 {
+        width: 100%;
+        padding: 8rem 0 2rem 0;
+        border-bottom: .05rem solid $color-white--lighter;
+        margin-left: 3rem;
+
+        @include respond(small-tab) {
+            padding: 2rem;
+        }
+
+        @include respond(phone) {
+            margin-left: 0;
+            padding: 1rem;
+        }
+
+        @include respond(x-small-phone) {
+            padding: 0;
+            text-align: start;
+        }
+    }
+
+    &__list {
+        width: 100%;
+        margin-top: 3rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        @include respond(small-tab) {
+            padding: 2rem;
+        }
+
+    }
+
+}
