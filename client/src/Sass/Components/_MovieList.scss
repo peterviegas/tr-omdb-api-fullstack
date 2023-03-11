@@ -1,0 +1,64 @@
+.movieList {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+
+    &__item {
+        width: 15rem;
+        height: 25rem;
+        border: .1px solid rgba(194, 192, 192, 0.541);
+        box-shadow: rgba(255, 255, 255, .2) 0px 0px 1rem .2rem;
+        border-radius: 3rem;
+        -webkit-border-radius: 3rem;
+        -moz-border-radius: 3rem;
+        -ms-border-radius: 3rem;
+        -o-border-radius: 3rem;
+
+        @include respond(small-tab-portrait) {
+            width: 100%;
+            height: auto;
+
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+        }
+
+    }
+
+    &__img-container {
+        height: 80%;
+        padding: 2rem;
+        background-color: $color-blue--light;
+        border-radius: 3rem;
+        -webkit-border-radius: 3rem;
+        -moz-border-radius: 3rem;
+        -ms-border-radius: 3rem;
+        -o-border-radius: 3rem;
+    }
+
+    &__img {
+        height: 100%;
+
+        @include respond(small-tab-portrait) {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__heading {
+        width: 100%;
+        text-align: center;
+        word-wrap: break-word;
+        padding: 1rem;
+        font-weight: 300;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: inherit;
+    }
+}
