@@ -12,7 +12,9 @@ const ComponentNavlink: React.FC = () => {
 
                 <li className="navlink"><NavLink to='/' className={({ isActive }) => isActive ? 'link--active' : 'link'}             > Home </NavLink></li>
 
-                <li className="navlink"><NavLink to='/movielist' className={({ isActive }) => isActive ? 'link--active' : 'link'} > Movies </NavLink></li>
+                <li className="navlink"><NavLink to='/movielist' className={({ isActive }) => isActive ? 'link--active' : 'link'} > MoviesList </NavLink></li>
+
+                <li className="navlink"><NavLink to='/movie' className={({ isActive }) => isActive ? 'link--active' : 'link'} > Movie </NavLink></li>
 
                 <li className="navlink"><NavLink to='/about' className={({ isActive }) => isActive ? 'link--active' : 'link'}   > About </NavLink></li>
 

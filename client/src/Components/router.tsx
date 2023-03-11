@@ -6,7 +6,7 @@ import { ComponentMainlayout } from "./mainlayout";
 import ComponentAbout from "./about";
 import MovieList from "./Movie/MovieList";
 import ComponentTeam from "./Team/team";
-
+import ComponentMovieProvider from "./Movie/MovieProvider";
 
 const ComponentRouter = () =>
 
@@ -16,6 +16,7 @@ const ComponentRouter = () =>
 
             <Route index element={<Home />} />
             <Route path="MovieList" element={<MovieList />} />
+            <Route path="Movie" element={<ComponentMovieProvider />} />
             <Route path="About" element={<ComponentAbout />} />
             <Route path="Team" element={<ComponentTeam />} />
 
