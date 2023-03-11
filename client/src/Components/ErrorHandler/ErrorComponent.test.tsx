@@ -19,5 +19,5 @@ test(`renders ErrorMessagesAPI,
         children: '⛔️ Error: 404 URL not found!',
     };
     render(<ErrorComponent {...mock} />);
-    screen.queryByRole('alertdialog', { description: `blabla` });
+    screen.queryByRole('alertdialog', { description: `⛔️ Error: 404 URL not found!` });
 });
