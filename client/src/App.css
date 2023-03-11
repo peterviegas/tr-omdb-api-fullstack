@@ -1,13 +1,17 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  background-color: transparent; }
 
 body {
-  background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.9) 10%, rgba(0, 0, 0, 0.9) 100%), url(./Images/bg-1.jpg);
+  height: 100vh;
+  background-image: linear-gradient(360deg, black 33%, rgba(0, 0, 0, 0.7) 100%), url("./Images/bg-1.jpg");
   background-repeat: no-repeat;
   background-color: #000;
-  word-spacing: .5rem; }
+  word-spacing: .5rem;
+  background-repeat: no-repeat;
+  background-position: top; }
 
 .App {
   padding: 5rem 1rem;
@@ -15,7 +19,9 @@ body {
   font-family: 'Lato', Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.3rem;
   font-weight: 100;
-  line-height: 1.7; }
+  line-height: 1.7;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-color: transparent; }
 
 .btn__movieCard {
   border: none;
