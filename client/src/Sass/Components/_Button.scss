@@ -1,0 +1,30 @@
+.btn {
+
+    &__movieCard {
+        border: none;
+        width: 50%;
+        padding: 1rem;
+        background-color: transparent;
+        border-radius: 1rem;
+        margin-top: 3rem;
+        color: inherit;
+        font-size: 1.2rem;
+        box-shadow: $box-shadow--btn-blue;
+        transition: .5s all;
+        -webkit-transition: .5s all;
+        -moz-transition: .5s all;
+        -ms-transition: .5s all;
+        -o-transition: .5s all;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.05);
+            -webkit-transform: scale(1.05);
+            -moz-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            -o-transform: scale(1.05);
+            color: $color-blue;
+            box-shadow: $box-shadow--btn-white;
+        }
+    }
+}
