@@ -1,9 +1,21 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 import App from './App'
+import MovieList from './Components/Movie/MovieList';
 
-test('renders learn react link', () => {
+test('renders class App', () => {
     render(<App />)
-    const linkElement = screen.getByText(/App/i)
-    expect(linkElement).toBeInTheDocument()
+    screen.queryByRole('class',{description: `App`})
 })
+
+test('renders class movieList', () => {
+    render(<App />)
+    screen.queryByRole('class',{description: `movieList`})
+})
+
+test("renders class movieList of the component MovieList", () => {
+render(
+  <MovieList />
+);
+screen.queryByRole('class',{description: `movieList`})
+});
