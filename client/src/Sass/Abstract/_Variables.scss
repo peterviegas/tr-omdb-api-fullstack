@@ -17,19 +17,16 @@ $color-error: #f44336;
 
 $box-shadow--small: 0 0 1rem 0.2rem rgba(255, 255, 255, 0.2);
 $box-shadow--medium: 0 0 0.7rem 0.2rem rgba(255,
-    255,
-    255, 0.8);
+        255,
+        255, 0.8);
 $box-shadow--btn: 0 0 0.2rem 0.2rem rgba(255,
-    255,
-    255, 0.2);
+        255,
+        255, 0.2);
 $box-shadow--btn-white: 0 0 0.6rem 0.05rem rgba(255,
-    255,
-    255, 0.2);
+        255,
+        255, 0.2);
 $box-shadow--btn-blue: 0 0 0.6rem 0.05rem rgba(75,
-    123,
-    236, 0.7);
+        123,
+        236, 0.7);
 
-$bg-main: linear-gradient(360deg,
-    rgba(0, 0, 0, .9) 10%,
-    hsla(0, 0, 0, .9) 100%),
-  url(./Images/bg-1.jpg);
+$bg-main: linear-gradient(360deg, rgba(0, 0, 0, 1) 33%, rgba(0, 0, 0, 0.6447172619047619) 100%), url('./Images/bg-1.jpg');
