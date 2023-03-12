@@ -1,5 +1,4 @@
-import React, { useContext, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useContext } from 'react';
 import ErrorComponent from '../ErrorHandler/ErrorComponent';
 import { MoviesContext, MoviesContextType } from './Context/MoviesContext';
 import { RenderMoviesList } from './RenderMoviesList';
