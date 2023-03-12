@@ -10,7 +10,7 @@ describe("Testing for the Header Component Label", () => {
                 <ComponentHeader />
             </BrowserRouter>
         );
-        const testHome = screen.getByText(/The Best IMDB Search Site/i);
+        const testHome = screen.getByText(/PNGC IMDB/i);
         expect(testHome).toBeInTheDocument();
     });
 });
