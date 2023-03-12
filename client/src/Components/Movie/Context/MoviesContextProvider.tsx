@@ -14,8 +14,8 @@ const MoviesContextProvider: React.FC<MoviesProviderProp> = ({ children }) => {
     const [errorMsg, setErrorMsg] = useState<string>('');
 
     const { errorFetch } = ErrorMessagesAPI;
-    //const url: string = `http://www.omdbapi.com/?s=spider&type=movie&apikey=3fe67f82`;
-    const url: string = `${baseUrl}/api/v1/search?title=spiderman`;
+    const url: string = `http://www.omdbapi.com/?s=spider&type=movie&apikey=3fe67f82`;
+    //const url: string = `${baseUrl}/api/v1/search/${title}`;
     const fetchMovie = async () => {
         setErrorMsg('');
         const movieResponse = await OmdbApiFetch<Array<MovieType>>(url);

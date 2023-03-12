@@ -1,13 +1,13 @@
 import React from 'react';
-import MoviePage from './MoviePage';
+import MovieList from './MovieList';
 import MoviesContextProvider from './Context/MoviesContextProvider';
 
-const ComponentMovieProvider: React.FC = () => {
+const ComponentMovieListProvider: React.FC = () => {
     return (
         <MoviesContextProvider>
-            <MoviePage />
+            <MovieList />
         </MoviesContextProvider>
     );
 };
 
-export default ComponentMovieProvider;
+export default ComponentMovieListProvider;
