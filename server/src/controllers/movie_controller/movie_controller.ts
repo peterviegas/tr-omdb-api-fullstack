@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
-import { getMovieFromApi } from '../services/movie_service';
-import { isApiKeyPresent } from '../util/environment';
-import { isString } from '../util/typeHandlers';
-import { convertUrlToArray } from '../util/urlHandler';
+import { getMovieFromApi } from '../../services/movie_service';
+import { isApiKeyPresent } from '../../util/environment';
+import { isString } from '../../util/typeHandlers';
+import { convertUrlToArray } from '../../util/urlHandler';
 
 export const getMovie = async (req: Request, res: Response) => {
     if (!isApiKeyPresent()) {

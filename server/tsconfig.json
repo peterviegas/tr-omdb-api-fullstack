@@ -1,6 +1,6 @@
 {
     "include": ["./src/**/*"],
-    "exclude": ["node_modules", "**/*.test.ts"],
+    "exclude": ["node_modules"],
     "compilerOptions": {
         "strict": true /* Enable all strict type-checking options. */,
         "target": "ES2022",
