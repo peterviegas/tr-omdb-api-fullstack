@@ -11,9 +11,19 @@
   -moz-border-radius: 3rem;
   -ms-border-radius: 3rem;
   -o-border-radius: 3rem;
+  overflow: hidden;
 
   @include respond(small-tab) {
+    width: 80%;
     padding: 0;
+  }
+
+  @include respond(large-tab-portrait) {
+    width: 85%;
+  }
+
+  @include respond(small-tab-portrait) {
+    width: 100%;
   }
 
 
@@ -63,6 +73,7 @@
     flex-direction: column;
     padding: 2rem 2rem 2rem 0;
     justify-content: space-evenly;
+    gap: 1.5rem;
 
     @include respond(small-tab) {
       padding: 2rem;
