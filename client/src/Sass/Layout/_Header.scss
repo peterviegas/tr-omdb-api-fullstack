@@ -1,0 +1,42 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-black--light;
+    ;
+    padding: 1rem $p-sides;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &__logobox {
+        font-size: 1rem;
+        margin: auto 0;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+
+
+
+    &__logo-img {
+        background-color: $color-white--light;
+        padding: .5rem;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        margin-left: .5rem
+    }
+}
