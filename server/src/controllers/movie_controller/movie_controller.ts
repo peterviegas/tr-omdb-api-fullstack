@@ -17,7 +17,7 @@ export const getMovie = async (req: Request, res: Response) => {
         return;
     }
     const data = await getMovieFromApi(id);
-    if (isString(data)) {
+    if (isString(data) || data === undefined) {
         res.status(500).send(data);
         return;
     }
