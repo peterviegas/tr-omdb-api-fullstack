@@ -1,6 +1,5 @@
 .home {
     width: 100%;
-    //margin-top: -5rem;
 
     &__box {
         width: 90%;
@@ -12,9 +11,12 @@
         -ms-border-radius: $border-radius;
         -o-border-radius: $border-radius;
         text-align: center;
+
+        @include respond(small-tab-portrait) {
+            padding: 2rem 0
+        }
+
     }
-
-
 
     &__bg {
         background-image: $bg-home;
