@@ -13,7 +13,7 @@ const ComponentRouter = () => (
         <Route path='/' element={<ComponentMainlayout />}>
             <Route index element={<Home />} />
             <Route path='movieList' element={<ComponentMovieListProvider />} />
-            <Route path='movie' element={<ComponentMovieProvider />} />
+            <Route path='movie/:id' element={<ComponentMovieProvider />} />
             <Route path='about' element={<ComponentAbout />} />
             <Route path='team' element={<ComponentTeam />} />
             <Route path='*' element={<NotFound />} />

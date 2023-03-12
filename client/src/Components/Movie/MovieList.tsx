@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import ErrorComponent from '../ErrorHandler/ErrorComponent';
 import { MoviesContext, MoviesContextType } from './Context/MoviesContext';
 import { RenderMoviesList } from './RenderMoviesList';
@@ -78,11 +79,14 @@ import { RenderMoviesList } from './RenderMoviesList';
 
 const MovieList: React.FC = () => {
     const { movies, errorMsg } = useContext<MoviesContextType>(MoviesContext);
+
     return (
-        <div>
-            <div className='movieList'>{RenderMoviesList(movies)}</div>
+        <>
+            <div className='movieList'>
+                {RenderMoviesList(movies, () => {})}
+            </div>
             {errorMsg && <ErrorComponent>{errorMsg}</ErrorComponent>}
-        </div>
+        </>
     );
 };
 
