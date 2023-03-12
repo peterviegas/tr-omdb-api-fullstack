@@ -22,7 +22,7 @@ test("Router MovieList", async () => {
 
 test("Router Movie", async () => {
 	render(
-		<MemoryRouter initialEntries={["/Movie"]}>
+		<MemoryRouter initialEntries={["/Movie/3fe67f8"]}>
 		<Router />
 		</MemoryRouter>
 	);
