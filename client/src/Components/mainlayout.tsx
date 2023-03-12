@@ -1,19 +1,15 @@
-import { Outlet } from "react-router-dom";
-import ComponentHeader from "./Header/header";
-import ComponentFooter from "./Footer/footer";
+import { Outlet } from 'react-router-dom';
+import ComponentHeader from './Header/header';
+import ComponentFooter from './Footer/footer';
 
-export const ComponentMainlayout: React.FC = () =>
-
-    <div>
-
+export const ComponentMainlayout: React.FC = () => (
+    <div className='container'>
         <ComponentHeader />
 
-        < main >
-
+        <main className='main'>
             <Outlet />
+        </main>
 
-        </ main >
-
-        < ComponentFooter />
-
-    </div>;
+        <ComponentFooter />
+    </div>
+);

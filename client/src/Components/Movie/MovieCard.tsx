@@ -18,6 +18,7 @@ interface MovieCardProp {
 //id is imbdId from Ombd json
 const id = 'tt0145487';
 const url: string = `http://www.omdbapi.com/?i=${id}&type=movie&apikey=3fe67f82`;
+// const url: string = "/movie/id";
 
 const MovieCard: React.FC<MovieCardProp> = ({ setId }) => {
     const [selectedMovie, setSelectedMovie] =
