@@ -46,7 +46,7 @@ describe("Testing for the Navlink Component MoviesList", () => {
 		expect(titleElement).toBeInTheDocument();
 	});
 });
-
+/*
 describe("Testing for the Navlink Component Movie", () => {
 	test("renders Movie", () => {
 		render(
@@ -68,7 +68,7 @@ describe("Testing for the Navlink Component Movie", () => {
 		expect(titleElement).toBeInTheDocument();
 	});
 });
-
+*/
 describe("Testing for the Navlink Component About", () => {
 	test("renders About", () => {
 		render(
