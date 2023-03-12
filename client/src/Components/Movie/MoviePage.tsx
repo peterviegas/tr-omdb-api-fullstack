@@ -1,12 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { MovieType } from './Type/MovieType.type';
 import { MoviesContext } from './Context/MoviesContext';
 import { RenderMoviesList } from './RenderMoviesList';
 import MovieCard from './MovieCard';
 import { useLocation } from 'react-router-dom';
 const MoviePage: React.FC = () => {
-    const [id, setId] = useState<string>('');
-
     const { movies } = useContext(MoviesContext);
     const location = useLocation();
     const { pathname } = location;
@@ -23,7 +21,6 @@ const MoviePage: React.FC = () => {
         e.preventDefault();
         const { pathname } = location;
         unselectedMovies(pathname.split('/')[2]);
-        setId(pathname.split('/')[2]);
     };
 
     return (
