@@ -9,6 +9,8 @@ const MoviePage: React.FC = () => {
 
     const { movies } = useContext(MoviesContext);
     const location = useLocation();
+    const { pathname } = location;
+    const imdbId = pathname.split('/')[2];
 
     const unselectedMovies = (id: string): Array<MovieType> => {
         const movieList: Array<MovieType> = movies.filter(
@@ -31,7 +33,7 @@ const MoviePage: React.FC = () => {
                 Other movies of your search list :
             </h3>
             <div className='moviePage__list'>
-                {RenderMoviesList(unselectedMovies(id), onClickHandler)}
+                {RenderMoviesList(unselectedMovies(imdbId), onClickHandler)}
             </div>
         </div>
     );
