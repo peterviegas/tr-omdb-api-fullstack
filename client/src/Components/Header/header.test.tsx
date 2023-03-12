@@ -16,7 +16,7 @@ describe("Testing for the Header Component Label", () => {
 
         );
 
-        const testHome = screen.getByText(/Welcome to the home of PNGC IMDB/i);
+        const testHome = screen.getByText(/The Best IMDB Search Site/i);
 
         expect(testHome).toBeInTheDocument();
 
