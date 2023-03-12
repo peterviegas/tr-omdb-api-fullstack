@@ -14,8 +14,7 @@ const ComponentNavlink: React.FC = () => {
                                 isActive ? 'link--active' : 'link'
                             }
                         >
-                            {' '}
-                            Home{' '}
+                            Home
                         </NavLink>
                     </li>
 
