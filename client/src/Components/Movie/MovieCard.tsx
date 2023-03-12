@@ -8,26 +8,29 @@ import {
 import { baseUrl } from '../Config/baseURL';
 import ErrorComponent from '../ErrorHandler/ErrorComponent';
 import { ErrorMessagesAPI } from '../ErrorHandler/ErrorMessages';
+import { useLocation } from 'react-router-dom';
 
 const { errorFetch } = ErrorMessagesAPI;
 
-interface MovieCardProp {
-    setId: (id: string) => void;
-}
-
 //id is imbdId from Ombd json
-const id = 'tt0145487';
-const url: string = `http://www.omdbapi.com/?i=${id}&type=movie&apikey=3fe67f82`;
+// const id = 'tt0145487';
+// const url: string = `http://www.omdbapi.com/?i=${id}&type=movie&apikey=3fe67f82`;
 
-const MovieCard: React.FC<MovieCardProp> = ({ setId }) => {
+const MovieCard: React.FC = () => {
     const [selectedMovie, setSelectedMovie] =
         useState<MovieCardType>(defaultMovieCard);
     const [errorMsg, setErrorMsg] = useState<string>('');
+    const location = useLocation();
 
     const fetchMovie = async () => {
+        const { pathname } = location;
+        const id = pathname.split('/')[2];
+
         setErrorMsg('');
-        const movieResponse = await OmdbApiFetch<MovieResponseType>(url);
-        setId(id);
+        const movieResponse = await OmdbApiFetch<MovieResponseType>(
+            `http://www.omdbapi.com/?i=${id}&apikey=3fe67f82`
+        );
+        console.log(movieResponse, 'hi');
         if (movieResponse && typeof movieResponse !== 'string') {
             const {
                 Actors,
@@ -80,7 +83,7 @@ const MovieCard: React.FC<MovieCardProp> = ({ setId }) => {
 
     useEffect(() => {
         fetchMovie();
-    }, []);
+    }, [location]);
     return (
         <div className='movieCard'>
             <div className='movieCard__summary'>

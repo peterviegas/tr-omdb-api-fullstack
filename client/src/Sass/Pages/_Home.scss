@@ -1,0 +1,71 @@
+.home {
+    width: 100%;
+    //margin-top: -5rem;
+
+    &__box {
+        width: 90%;
+        padding: 2rem;
+        margin: 0 auto;
+        border-radius: $border-radius;
+        -webkit-border-radius: $border-radius;
+        -moz-border-radius: $border-radius;
+        -ms-border-radius: $border-radius;
+        -o-border-radius: $border-radius;
+        text-align: center;
+    }
+
+
+
+    &__bg {
+        background-image: $bg-home;
+        height: 35rem;
+        padding: 6rem 0;
+        background-position: left;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    &__heading3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    &__content {
+        font-size: 1rem;
+        font-weight: 100;
+    }
+
+    &__content-bold {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 1rem 0;
+    }
+
+    &__form {
+        width: 100%;
+        margin-top: 2rem;
+
+    }
+
+    &__input {
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        color: $color-white--light;
+        border: none;
+        background-color: $color-white--lighter;
+        border-radius: $border-radius;
+        -webkit-border-radius: $border-radius;
+        -moz-border-radius: $border-radius;
+        -ms-border-radius: $border-radius;
+        -o-border-radius: $border-radius;
+
+        &:focus {
+            outline: none;
+            border: .3px solid $color-white--light;
+            box-shadow: $box-shadow--btn-white;
+        }
+
+
+    }
+}

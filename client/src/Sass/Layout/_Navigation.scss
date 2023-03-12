@@ -1,0 +1,22 @@
+.nav {
+    width: 50%;
+
+    &__list {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__item {
+        list-style: none;
+
+        a {
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: $font-color;
+        }
+
+    }
+}

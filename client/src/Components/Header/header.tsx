@@ -1,16 +1,23 @@
-import React from "react";
-import ComponentNavlink from "../navlink";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import ComponentNavlink from '../navlink';
+const logo = require('../../Images/film.png');
 
+const ComponentHeader: React.FC = () => (
+    <header className='header'>
+        <div className='header__logobox'>
+            <NavLink to='/' className='header__logo'>
+                PNGC IMDB
+                <img
+                    className='header__logo-img'
+                    src={logo}
+                    alt='PNGC IMDB logo'
+                />
+            </NavLink>
+        </div>
 
-const ComponentHeader: React.FC = () =>
-
-    <header className="header">
-
-
-        <h2 className="text__center" > PNGC IMDB </h2>
-        <p className="text__center"> The Best IMDB Search Site</p>
         <ComponentNavlink />
-
     </header>
+);
 
 export default ComponentHeader;
