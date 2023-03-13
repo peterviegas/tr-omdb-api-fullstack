@@ -1,5 +1,13 @@
+.hidden {
+    display: none;
+}
+
 .nav {
-    width: 50%;
+    width: 35%;
+
+    @include respond(small-tab-portrait) {
+        display: none;
+    }
 
     &__list {
 
@@ -16,7 +24,31 @@
             font-weight: 500;
             text-decoration: none;
             color: $font-color;
+
+            @include respond(large-tab) {
+                font-size: .8rem;
+            }
         }
 
+    }
+
+    &__smalldevices {
+        display: none;
+        position: absolute;
+        top: rem;
+        right: 2rem;
+        z-index: 500;
+
+        img {
+            width: 3rem;
+
+            @include respond(small-tab-portrait) {
+                width: 2rem;
+            }
+        }
+
+        @include respond(small-tab-portrait) {
+            display: block;
+        }
     }
 }

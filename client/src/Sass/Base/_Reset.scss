@@ -5,12 +5,23 @@
    background-color: transparent;
 }
 
+html {
+   height: 100%;
+}
+
 body {
+   height: 100%;
    background-image: $bg-main;
    background-repeat: repeat;
    word-spacing: .5rem;
    background-position: top;
+   position: relative;
+   z-index: 0;
 
+}
+
+.root {
+   height: 100%;
 }
 
 .App {
@@ -23,6 +34,8 @@ body {
 }
 
 .main {
-   //margin-top: 5rem;
+   @include respond(small-tab) {
+      padding: 0
+   }
 
 }

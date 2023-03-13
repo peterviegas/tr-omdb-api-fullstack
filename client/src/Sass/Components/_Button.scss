@@ -1,4 +1,17 @@
 .btn {
+    &__search-homepage {
+        width: 4rem;
+        height: 4rem;
+        border: none;
+        //margin-left: -4rem;
+        cursor: pointer;
+
+        img {
+            width: 2.2rem;
+        }
+    }
+
+
 
     &__movieCard {
         border: none;
@@ -16,6 +29,11 @@
         -ms-transition: .5s all;
         -o-transition: .5s all;
         cursor: pointer;
+
+        @include respond(small-tab) {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
 
         &:hover {
             transform: scale(1.05);
