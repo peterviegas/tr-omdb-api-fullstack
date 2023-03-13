@@ -4,11 +4,20 @@
   box-sizing: border-box;
   background-color: transparent; }
 
+html {
+  height: 100%; }
+
 body {
+  height: 100%;
   background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.95) 33%, rgba(0, 0, 0, 0.9) 100%), url("./Images/bg-1.jpg");
   background-repeat: repeat;
   word-spacing: .5rem;
-  background-position: top; }
+  background-position: top;
+  position: relative;
+  z-index: 0; }
+
+.root {
+  height: 100%; }
 
 .App {
   color: rgba(211, 211, 211, 0.635);
@@ -16,6 +25,18 @@ body {
   font-size: 1.3rem;
   font-weight: 100;
   line-height: 1.7; }
+
+@media only screen and (max-width: 56.25em) {
+  .main {
+    padding: 0; } }
+
+.btn__search-homepage {
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  cursor: pointer; }
+  .btn__search-homepage img {
+    width: 2.2rem; }
 
 .btn__movieCard {
   border: none;
@@ -33,6 +54,10 @@ body {
   -ms-transition: .5s all;
   -o-transition: .5s all;
   cursor: pointer; }
+  @media only screen and (max-width: 56.25em) {
+    .btn__movieCard {
+      width: 100%;
+      margin-bottom: 2rem; } }
   .btn__movieCard:hover {
     transform: scale(1.05);
     -webkit-transform: scale(1.05);
@@ -42,6 +67,12 @@ body {
     color: #4b7bec;
     box-shadow: 0 0 0.6rem 0.05rem rgba(255, 255, 255, 0.2); }
 
+.icon__menu {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  fill: white; }
+
 .movieCard {
   width: 100%;
   display: flex;
@@ -49,20 +80,15 @@ body {
   gap: 1rem;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 3rem;
-  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 1rem 0.2rem;
-  border-radius: 3rem;
-  -webkit-border-radius: 3rem;
-  -moz-border-radius: 3rem;
-  -ms-border-radius: 3rem;
-  -o-border-radius: 3rem;
-  overflow: hidden; }
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 1rem 0.2rem; }
   @media only screen and (max-width: 56.25em) {
     .movieCard {
       width: 80%;
       padding: 0; } }
   @media only screen and (max-width: 48em) {
     .movieCard {
-      width: 85%; } }
+      width: 85%;
+      overflow: hidden; } }
   @media only screen and (max-width: 37.5em) {
     .movieCard {
       width: 100%; } }
@@ -72,6 +98,9 @@ body {
     display: flex;
     gap: 3rem;
     font-size: 1.2rem; }
+    @media only screen and (max-width: 64em) {
+      .movieCard__summary {
+        height: 50rem; } }
     @media only screen and (max-width: 56.25em) {
       .movieCard__summary {
         width: 100%;
@@ -82,14 +111,27 @@ body {
         flex-direction: column-reverse;
         flex-wrap: wrap; } }
   .movieCard__imgBox {
-    height: 100%; }
+    width: 40%;
+    height: 100%;
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem; }
     @media only screen and (max-width: 56.25em) {
       .movieCard__imgBox {
         width: 100%;
         height: auto;
-        text-align: center; } }
+        padding: 6rem; } }
+    @media only screen and (max-width: 48em) {
+      .movieCard__imgBox {
+        padding: 3rem; } }
+    @media only screen and (max-width: 30em) {
+      .movieCard__imgBox {
+        padding: 1rem; } }
     .movieCard__imgBox img {
+      width: 100%;
       height: 100%; }
+      @media only screen and (max-width: 64em) {
+        .movieCard__imgBox img {
+          height: 85%; } }
       @media only screen and (max-width: 56.25em) {
         .movieCard__imgBox img {
           width: 100%;
@@ -98,6 +140,7 @@ body {
         .movieCard__imgBox img {
           width: auto; } }
   .movieCard__detailBox {
+    width: 60%;
     display: flex;
     flex-direction: column;
     padding: 2rem 2rem 2rem 0;
@@ -105,6 +148,7 @@ body {
     gap: 1.5rem; }
     @media only screen and (max-width: 56.25em) {
       .movieCard__detailBox {
+        width: 100%;
         padding: 2rem; } }
     @media only screen and (max-width: 30em) {
       .movieCard__detailBox {
@@ -120,9 +164,11 @@ body {
     padding: .5rem; }
   .movieCard__heading {
     padding-bottom: 1rem;
-    border-bottom: 0.05rem solid rgba(255, 255, 255, 0.1); }
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.1); }
   .movieCard__description {
-    font-size: 1.1rem; }
+    font-size: 1.1rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.1); }
   .movieCard__genre {
     display: flex;
     align-items: centre;
@@ -143,7 +189,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 3rem;
-  margin: 10rem 0;
+  margin: 7rem 0;
   padding: 0 1.5rem; }
   .movieList__item {
     width: 15rem;
@@ -171,6 +217,7 @@ body {
     -ms-border-radius: 3rem;
     -o-border-radius: 3rem; }
   .movieList__img {
+    width: 100%;
     height: 100%; }
     @media only screen and (max-width: 37.5em) {
       .movieList__img {
@@ -181,14 +228,19 @@ body {
     text-align: center;
     word-wrap: break-word;
     padding: 1rem;
-    font-weight: 300; }
+    font-weight: 300;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden; }
   .movieList__link {
     text-decoration: none;
     color: inherit; }
 
 .footer {
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -203,6 +255,12 @@ body {
     font-weight: 500;
     text-decoration: none;
     color: rgba(211, 211, 211, 0.635); }
+    @media only screen and (max-width: 64em) {
+      .footer__logo {
+        font-size: 1.2rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .footer__logo {
+        font-size: 1rem; } }
   .footer__logo-img {
     background-color: rgba(255, 255, 255, 0.7);
     padding: .5rem;
@@ -212,6 +270,9 @@ body {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     margin-left: .5rem; }
+    @media only screen and (max-width: 64em) {
+      .footer__logo-img {
+        padding: 0.3rem; } }
 
 .header {
   width: 100%;
@@ -219,10 +280,13 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 1rem 2rem;
-  position: absolute;
-  top: 0;
-  left: 0; }
+  padding: 1rem 2rem; }
+  @media only screen and (max-width: 37.5em) {
+    .header {
+      padding: 3rem 2rem; } }
+  @media only screen and (max-width: 30em) {
+    .header {
+      padding: 1.5rem 2rem; } }
   .header__logobox {
     font-size: 1rem;
     margin: auto 0; }
@@ -234,6 +298,12 @@ body {
     align-items: center;
     font-size: 1.3rem;
     font-weight: 500; }
+    @media only screen and (max-width: 64em) {
+      .header__logo {
+        font-size: 1.2rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .header__logo {
+        font-size: 1rem; } }
   .header__logo-img {
     background-color: rgba(255, 255, 255, 0.7);
     padding: .5rem;
@@ -243,9 +313,18 @@ body {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     margin-left: .5rem; }
+    @media only screen and (max-width: 64em) {
+      .header__logo-img {
+        padding: 0.3rem; } }
+
+.hidden {
+  display: none; }
 
 .nav {
-  width: 50%; }
+  width: 35%; }
+  @media only screen and (max-width: 37.5em) {
+    .nav {
+      display: none; } }
   .nav__list {
     display: flex;
     justify-content: space-between;
@@ -257,6 +336,23 @@ body {
       font-weight: 500;
       text-decoration: none;
       color: rgba(211, 211, 211, 0.635); }
+      @media only screen and (max-width: 64em) {
+        .nav__item a {
+          font-size: .8rem; } }
+  .nav__smalldevices {
+    display: none;
+    position: absolute;
+    top: rem;
+    right: 2rem;
+    z-index: 500; }
+    .nav__smalldevices img {
+      width: 3rem; }
+      @media only screen and (max-width: 37.5em) {
+        .nav__smalldevices img {
+          width: 2rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .nav__smalldevices {
+        display: block; } }
 
 .home {
   width: 100%; }
@@ -272,30 +368,85 @@ body {
     text-align: center; }
     @media only screen and (max-width: 37.5em) {
       .home__box {
-        padding: 2rem 0; } }
+        padding: 2rem 1rem; } }
   .home__bg {
-    background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 33%, rgba(0, 0, 0, 0.9) 100%), url("./Images/spideman-img.jpg");
+    background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 33%, rgba(0, 0, 0, 0.9) 100%), url("./Images/spiderman-img.jpg");
     height: 35rem;
     padding: 6rem 0;
     background-position: left;
     background-size: cover;
     background-attachment: fixed; }
+    @media only screen and (max-width: 90em) {
+      .home__bg {
+        background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 33%, rgba(0, 0, 0, 0.9) 100%), url("./Images/spiderman-1440.jpg"); } }
+    @media only screen and (max-width: 80em) {
+      .home__bg {
+        background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 33%, rgba(0, 0, 0, 0.9) 100%), url("./Images/spiderman-1440.jpg");
+        height: 28rem; } }
+    @media only screen and (max-width: 64em) {
+      .home__bg {
+        background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 33%, rgba(0, 0, 0, 0.9) 100%), url("./Images/spiderman-1024.jpg");
+        height: 34rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .home__bg {
+        background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 33%, rgba(0, 0, 0, 0.9) 100%), url("./Images/spiderman-900.jpg");
+        height: 25rem; } }
+    @media only screen and (max-width: 48em) {
+      .home__bg {
+        background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 33%, rgba(0, 0, 0, 0.9) 100%), url("./Images/spiderman-900.jpg");
+        height: 41rem; } }
+    @media only screen and (max-width: 30em) {
+      .home__bg {
+        height: 31.5rem; } }
+    @media only screen and (min-width: 112.5em) {
+      .home__bg {
+        height: 60rem; } }
   .home__heading3 {
     font-size: 1.8rem;
     margin-bottom: 1rem; }
+    @media only screen and (max-width: 64em) {
+      .home__heading3 {
+        font-size: 1.4rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .home__heading3 {
+        background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 33%, rgba(0, 0, 0, 0.9) 100%), url("./Images/spiderman-900.jpg");
+        font-size: 1.2rem; } }
+    @media only screen and (max-width: 30em) {
+      .home__heading3 {
+        font-size: 1.2rem; } }
   .home__content {
     font-size: 1rem;
     font-weight: 100; }
+    @media only screen and (max-width: 64em) {
+      .home__content {
+        font-size: .8rem; } }
   .home__content-bold {
     font-size: 1rem;
     font-weight: 500;
     margin: 1rem 0; }
   .home__form {
-    width: 100%;
-    margin-top: 2rem; }
+    width: 70%;
+    margin-top: 2rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%); }
+    @media only screen and (max-width: 37.5em) {
+      .home__form {
+        width: 90%; } }
+  .home__inputbox {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    border: none; }
   .home__input {
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.7);
     border: none;
@@ -308,7 +459,11 @@ body {
     .home__input:focus {
       outline: none;
       border: 0.3px solid rgba(255, 255, 255, 0.7);
-      box-shadow: 0 0 0.6rem 0.05rem rgba(255, 255, 255, 0.2); }
+      box-shadow: 0 0 0.6rem 0.05rem rgba(255, 255, 255, 0.2);
+      background-color: rgba(0, 0, 0, 0.6); }
+    @media only screen and (max-width: 37.5em) {
+      .home__input::placeholder {
+        font-size: 1rem; } }
 
 .moviePage {
   width: 100%;
@@ -316,10 +471,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10rem 3rem; }
+  padding: 7rem 3rem; }
   @media only screen and (max-width: 64em) {
     .moviePage {
-      padding: 10rem .5rem; } }
+      padding: 7rem .5rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .moviePage {
+      padding: 0 .5rem; } }
   .moviePage__heading-3 {
     width: 100%;
     padding: 8rem 0 2rem 0;
