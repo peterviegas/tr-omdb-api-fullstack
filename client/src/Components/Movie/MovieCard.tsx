@@ -5,10 +5,10 @@ import {
     MovieCardType,
     MovieResponseType,
 } from './Type/MovieType.type';
-import { baseUrl } from '../Config/baseURL';
 import ErrorComponent from '../ErrorHandler/ErrorComponent';
 import { ErrorMessagesAPI } from '../ErrorHandler/ErrorMessages';
 import { useLocation } from 'react-router-dom';
+//import { baseUrl } from '../Config/baseURL';
 
 const { errorFetch } = ErrorMessagesAPI;
 
@@ -24,13 +24,13 @@ const MovieCard: React.FC = () => {
 
     const fetchMovie = async () => {
         const { pathname } = location;
-        const id = pathname.split('/')[2];
+        const id = pathname.split('/')[3];
 
         setErrorMsg('');
         const movieResponse = await OmdbApiFetch<MovieResponseType>(
             `http://www.omdbapi.com/?i=${id}&apikey=3fe67f82`
         );
-        console.log(movieResponse, 'hi');
+
         if (movieResponse && typeof movieResponse !== 'string') {
             const {
                 Actors,
