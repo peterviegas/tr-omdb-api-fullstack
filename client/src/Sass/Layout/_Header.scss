@@ -6,6 +6,7 @@
     background-color: $color-black--light;
     ;
     padding: 1rem $p-sides;
+    box-shadow: $box-shadow--btn-blue;
 
     @include respond(small-tab-portrait) {
         padding: 3rem $p-sides;
