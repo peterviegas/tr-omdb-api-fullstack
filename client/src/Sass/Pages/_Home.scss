@@ -1,6 +1,5 @@
 .home {
     width: 100%;
-    //margin-top: -5rem;
 
     &__box {
         width: 90%;
@@ -12,9 +11,11 @@
         -ms-border-radius: $border-radius;
         -o-border-radius: $border-radius;
         text-align: center;
+
+        @include respond(small-tab-portrait) {
+            padding: 2rem 1rem;
+        }
     }
-
-
 
     &__bg {
         background-image: $bg-home;
@@ -23,16 +24,67 @@
         background-position: left;
         background-size: cover;
         background-attachment: fixed;
+
+        @include respond(wide-screens) {
+            background-image: $bg-home--1440;
+        }
+
+        @include respond(desktop) {
+            background-image: $bg-home--1440;
+            height: 28rem;
+        }
+
+        @include respond(large-tab) {
+            background-image: $bg-home--1024;
+            height: 34rem;
+        }
+
+        @include respond(small-tab) {
+            background-image: $bg-home--900;
+            height: 25rem;
+        }
+
+        @include respond(large-tab-portrait) {
+            background-image: $bg-home--900;
+            height: 41rem;
+        }
+
+        @include respond(phone) {
+            height: 31.5rem;
+        }
+
+        @include respond(large-screens) {
+            height: 60rem;
+        }
+
+
     }
 
     &__heading3 {
         font-size: 1.8rem;
         margin-bottom: 1rem;
+
+        @include respond(large-tab) {
+            font-size: 1.4rem;
+        }
+
+        @include respond(small-tab) {
+            background-image: $bg-home--900;
+            font-size: 1.2rem;
+        }
+
+        @include respond(phone) {
+            font-size: 1.2rem;
+        }
     }
 
     &__content {
         font-size: 1rem;
         font-weight: 100;
+
+        @include respond(large-tab) {
+            font-size: .8rem;
+        }
     }
 
     &__content-bold {
@@ -42,14 +94,33 @@
     }
 
     &__form {
-        width: 100%;
+        width: 70%;
         margin-top: 2rem;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
 
+        @include respond(small-tab-portrait) {
+            width: 90%;
+        }
+    }
+
+    &__inputbox {
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        color: $color-white--light;
+        border: none;
     }
 
     &__input {
         width: 100%;
-        padding: 1rem 2rem;
+        padding: 1.2rem 2rem;
         font-size: 1.2rem;
         color: $color-white--light;
         border: none;
@@ -64,6 +135,13 @@
             outline: none;
             border: .3px solid $color-white--light;
             box-shadow: $box-shadow--btn-white;
+            background-color: $color-black--light;
+        }
+
+        @include respond(small-tab-portrait) {
+            &::placeholder {
+                font-size: 1rem;
+            }
         }
 
 

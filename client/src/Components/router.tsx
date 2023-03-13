@@ -12,8 +12,15 @@ const ComponentRouter = () => (
     <Routes>
         <Route path='/' element={<ComponentMainlayout />}>
             <Route index element={<Home />} />
-            <Route path='movieList' element={<ComponentMovieListProvider />} />
-            <Route path='movie/:id' element={<ComponentMovieProvider />} />
+            <Route
+                path='movielist/:title'
+                element={<ComponentMovieListProvider />}
+            />
+            <Route
+                path='movie/:title/:id'
+                element={<ComponentMovieProvider />}
+            />
+            {/* <Route path='wishlist' element={} /> */}
             <Route path='about' element={<ComponentAbout />} />
             <Route path='team' element={<ComponentTeam />} />
             <Route path='*' element={<NotFound />} />

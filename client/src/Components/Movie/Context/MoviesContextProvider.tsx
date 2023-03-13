@@ -3,7 +3,8 @@ import { MoviesContext } from './MoviesContext';
 import { MovieType } from '../Type/MovieType.type';
 import { OmdbApiFetch } from '../../Fetch/OmbdApiFetch';
 import { ErrorMessagesAPI } from '../../ErrorHandler/ErrorMessages';
-import { baseUrl } from '../../Config/baseURL';
+import { useLocation } from 'react-router-dom';
+//import { baseUrl } from '../../Config/baseURL';
 
 interface MoviesProviderProp {
     children: React.ReactNode;
@@ -12,13 +13,18 @@ interface MoviesProviderProp {
 const MoviesContextProvider: React.FC<MoviesProviderProp> = ({ children }) => {
     const [movies, setMovies] = useState<Array<MovieType>>([]);
     const [errorMsg, setErrorMsg] = useState<string>('');
+    const location = useLocation();
+
+    const { pathname } = location;
+    const searchedMovie = pathname.split('/')[2];
 
     const { errorFetch } = ErrorMessagesAPI;
-    const url: string = `http://www.omdbapi.com/?s=spider&type=movie&apikey=3fe67f82`;
-    //const url: string = `${baseUrl}/api/v1/search/${title}`;
+
     const fetchMovie = async () => {
         setErrorMsg('');
-        const movieResponse = await OmdbApiFetch<Array<MovieType>>(url);
+        const movieResponse = await OmdbApiFetch<Array<MovieType>>(
+            `http://www.omdbapi.com/?s=${searchedMovie}&type=movie&apikey=3fe67f82`
+        );
 
         if (movieResponse && typeof movieResponse !== 'string') {
             const movieArray: Array<MovieType> = movieResponse.map(

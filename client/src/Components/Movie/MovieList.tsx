@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import ErrorComponent from '../ErrorHandler/ErrorComponent';
 import { MoviesContext, MoviesContextType } from './Context/MoviesContext';
@@ -80,10 +80,16 @@ import { RenderMoviesList } from './RenderMoviesList';
 const MovieList: React.FC = () => {
     const { movies, errorMsg } = useContext<MoviesContextType>(MoviesContext);
 
+    const location = useLocation();
+    const { pathname } = location;
+
+    console.log(pathname);
+    const searchedMovieName = pathname.split('/')[2];
+
     return (
         <>
             <div className='movieList'>
-                {RenderMoviesList(movies, () => {})}
+                {RenderMoviesList(movies, searchedMovieName, () => {})}
             </div>
             {errorMsg && <ErrorComponent>{errorMsg}</ErrorComponent>}
         </>
