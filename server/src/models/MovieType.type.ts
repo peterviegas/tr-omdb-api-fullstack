@@ -1,5 +1,12 @@
-export type MovieCardType = {
+export type MovieShortType = {
+    Title: string;
+    Year: string;
+    imdbID: string;
+    Type: string;
+    Poster: string;
+};
 
+export type MovieLongType = MovieShortType & {
     Actors: string;
     Awards: string;
     Country: string;
@@ -7,25 +14,12 @@ export type MovieCardType = {
     Genre: string;
     Language: string;
     Plot: string;
-    Poster: string;
     Rated: number;
     Released: string;
     Runtime: string;
-    Title: string;
-    Type: string;
     Writer: string;
-    Year: string;
-    imdbID: string;
     imdbRating: number;
     imdbVotes: string;
-}
+};
 
-export type MovieType = {
-
-    Title: string;
-    Year: string;
-    imdbID: string;
-    Type: string;
-    Poster: string;
-}
-
+export type APIError = { Response: string; Error: string };

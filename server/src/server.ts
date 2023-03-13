@@ -1,8 +1,5 @@
 import { app } from './app';
-import * as dotenv from 'dotenv';
-dotenv.config({ path: `.env.local` });
-
-const PORT = 3001;
+import { PORT } from './util/environment';
 
 app.listen(PORT, () => {
     console.log(`🚂 Express started on port ${PORT}`);

@@ -1,9 +1,9 @@
 import express from 'express';
-import * as movieController from '../controllers/movie_controller';
+import { getHealth } from '../controllers/health_controller/health_controller';
+import { getMovies } from '../controllers/movies_controller/movies_controller';
+import { getMovie } from '../controllers/movie_controller/movie_controller';
 
 export const router = express.Router();
-router.get('/', (req, res) => {
-    res.send('Welcome to the Movie API!');
-});
-router.get('/search', movieController.getMovies);
-router.get('/movie', movieController.getMovie);
+router.get('/health', getHealth);
+router.get('/search(/*)?', getMovies);
+router.get('/movie(/*)?', getMovie);

@@ -46,9 +46,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 The REST api will be located at;
 
-[http://localhost:3001/api/v1/search](http://localhost:3001/api/v1/search?title=movie-title). this requires a `title` url query with a movie name search term
+[http://localhost:3001/api/v1/search/{title}](http://localhost:3001/api/v1/search/). this requires a `title` url path with a movie name search term
 
-[http://localhost:3001/api/v1/movie?id=imdb-id](http://localhost:3001/api/v1/movie?id=imdb-id). this requires a `id` url query with a valid IMDB id.
+[http://localhost:3001/api/v1/movie/{id}](http://localhost:3001/api/v1/movie/). this requires a `id` url path with a valid IMDB id.
 
 ## Tests
 Tests can be run
