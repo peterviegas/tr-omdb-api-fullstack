@@ -11,18 +11,18 @@ test("Router Home", async () => {
 	expect(screen.getByText(/Welcome to/i)).toBeInTheDocument();
 });
 
-test("Router MovieList", async () => {
+test("Router Wishlist", async () => {
 	render(
-		<MemoryRouter initialEntries={["/MovieList"]}>
+		<MemoryRouter initialEntries={["/movielist/Last Action Hero"]}>
 		<Router />
 		</MemoryRouter>
 	);
-	expect(screen.getByText(/MoviesList/i)).toBeInTheDocument();
+	expect(screen.getByText(/Wishlist/i)).toBeInTheDocument();
 });
 
 test("Router Movie", async () => {
 	render(
-		<MemoryRouter initialEntries={["/Movie/3fe67f8"]}>
+		<MemoryRouter initialEntries={["/movie/Last Action Hero/tt0107362"]}>
 		<Router />
 		</MemoryRouter>
 	);
@@ -40,7 +40,7 @@ test("Router About", async () => {
 
 test("Router Team", async () => {
 	render(
-		<MemoryRouter initialEntries={["/Team"]}>
+		<MemoryRouter initialEntries={["/team"]}>
 		<Router />
 		</MemoryRouter>
 	);
