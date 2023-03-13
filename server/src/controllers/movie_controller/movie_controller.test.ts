@@ -46,11 +46,6 @@ describe('GET /api/v1/movie endpoint', () => {
         expect(res.text).toBe('API Key not found');
         expect(res.statusCode).toEqual(500);
     });
-    it('Should fail because no ID is set', async () => {
-        const res = await request(app).get('/api/v1/movie/');
-        expect(res.text).toBe('ID not found');
-        expect(res.statusCode).toEqual(400);
-    });
 });
 
 const server = setupServer();

@@ -18,14 +18,9 @@ describe('GET /api/v1/search endpoint', () => {
     });
     it('Should fail because API_KEY is not set', async () => {
         jest.spyOn(environment, 'isApiKeyPresent').mockReturnValue(false);
-        const res = await request(app).get('/api/v1/search/');
+        const res = await request(app).get('/api/v1/search/fake');
         expect(res.text).toBe('API Key not found');
         expect(res.statusCode).toEqual(500);
-    });
-    it('Should fail because no title is set', async () => {
-        const res = await request(app).get('/api/v1/search/');
-        expect(res.text).toBe('Title not found');
-        expect(res.statusCode).toEqual(400);
     });
 });
 
