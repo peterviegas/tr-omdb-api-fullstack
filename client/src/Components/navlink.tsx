@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+const openBtn = require('../Images/menu.png');
+const closeBtn = require('../Images/close.png');
 
 const ComponentNavlink: React.FC = () => {
+    const [clicked, setClicked] = useState<boolean>(false);
     return (
         <>
-            <nav className='nav--smalldevices'></nav>
+            <div
+                className={clicked ? 'hidden' : 'nav__smalldevices'}
+                onClick={() => {
+                    setClicked(!clicked);
+                }}
+            >
+                <img
+                    src={openBtn}
+                    alt='menu button'
+                    onClick={() => {
+                        setClicked(!clicked);
+                    }}
+                />
+            </div>
+            <div className={clicked ? 'nav__smalldevices' : 'hidden'}>
+                <img
+                    src={closeBtn}
+                    alt='close button'
+                    onClick={() => {
+                        setClicked(!clicked);
+                    }}
+                />
+            </div>
+
             <nav className='nav'>
                 <ul className='nav__list'>
                     <li className='nav__item'>
@@ -20,13 +46,12 @@ const ComponentNavlink: React.FC = () => {
 
                     <li className='nav__item'>
                         <NavLink
-                            to='/movielist'
+                            to='/wishlist'
                             className={({ isActive }) =>
                                 isActive ? 'link--active' : 'link'
                             }
                         >
-                            {' '}
-                            MoviesList{' '}
+                            Wishlist
                         </NavLink>
                     </li>
 
