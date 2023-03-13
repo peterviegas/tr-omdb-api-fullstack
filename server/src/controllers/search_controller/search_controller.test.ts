@@ -22,6 +22,11 @@ describe('GET /api/v1/search endpoint', () => {
         expect(res.text).toBe('API Key not found');
         expect(res.statusCode).toEqual(500);
     });
+    it('Should return a 400 from the server if page is not a number', async () => {
+        const res = await request(app).get('/api/v1/search/fake/amazing');
+        expect(res.text).toBe('page is not a valid number');
+        expect(res.statusCode).toBe(400);
+    });
 });
 
 const server = setupServer();

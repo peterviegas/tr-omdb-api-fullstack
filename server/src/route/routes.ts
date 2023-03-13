@@ -6,4 +6,5 @@ import { getMovie } from '../controllers/movie_controller/movie_controller';
 export const router = express.Router();
 router.get('/health', getHealth);
 router.get('/search/:title', getSearch);
+router.get('/search/:title/:page', getSearch);
 router.get('/movie/:id', getMovie);
