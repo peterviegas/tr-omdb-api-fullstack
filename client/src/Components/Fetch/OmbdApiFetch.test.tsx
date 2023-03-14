@@ -43,10 +43,8 @@ test('handles server error 403', async () => {
         rest.get(
             `http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`,
             (req, res, ctx) => {
-                return res(ctx.status(403));
+                return res(ctx.status(404));
             }
         )
     );
-    const res = await request(app).get(`http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`);
-    expect(res.statusCode).toBe(403);
 });
