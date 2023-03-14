@@ -1,10 +1,8 @@
-import React from 'react'
-import { render, screen } from "@testing-library/react";
-import { act, renderHook } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
-import MoviePage from './MoviePage';
-import { RenderMoviesList } from './RenderMoviesList';
+import { render, unmountComponentAtNode } from "react-dom";
+import { act } from 'react-dom/test-utils';
+import { MemoryRouter } from "react-router-dom";
 import App from './../../App';
+import { RenderMoviesList } from './RenderMoviesList';
 
  const movieArr = [
      {
@@ -79,20 +77,19 @@ import App from './../../App';
      },
  ];
 
- test('temporary test for packet upload', () => {
-    render(<App />)
-    screen.queryByRole('class',{description: `movieList`})
-})
-
 /*
 describe("RenderMoviesList", () => {
 	test("Should match a snapshot", () => {
-		const { container } = render (
-			<BrowserRouter>
-				<ErrorMessagesAPI movie={movieArr} searchedMovieName='teste' />
-			</BrowserRouter>
+
+		const root = document.createElement('div');
+  		document.body.appendChild(root);
+
+		render (
+			<MemoryRouter initialEntries={['/']}>
+				<RenderMoviesList  />
+			</MemoryRouter>,
+			root
 		)
-		expect(container).toMatchSnapshot();
 	})
 });*/
 
