@@ -4,7 +4,7 @@ import { MovieType, SearchResponseType } from '../Type/MovieType.type';
 import { OmdbApiFetch } from '../../Fetch/OmbdApiFetch';
 import { ErrorMessagesAPI } from '../../ErrorHandler/ErrorMessages';
 import { useLocation } from 'react-router-dom';
-import { baseUrl } from '../../Config/baseURL';
+import { baseUrl, numOfMoviesPerPage } from '../../Config/baseURL';
 
 const convertToNumber = (str: string) => {
     return parseInt(str);
@@ -49,9 +49,13 @@ const MoviesContextProvider: React.FC<MoviesProviderProp> = ({ children }) => {
             );
             setMovies(movieArray);
 
-            setTotalPages(
-                Math.ceil(convertToNumber(totalResults) / movieArray.length)
-            );
+            if (movieArray.length > 0) {
+                setTotalPages(
+                    Math.ceil(
+                        convertToNumber(totalResults) / numOfMoviesPerPage
+                    )
+                );
+            }
         } else if (!movieResponse) {
             setErrorMsg(errorFetch);
         } else {
