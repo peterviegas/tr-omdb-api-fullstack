@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getMoviesFromApi } from '../../services/search_service';
+import { getSearchFromApi } from '../../services/search_service';
 import { isApiKeyPresent } from '../../util/environment';
 import { isString } from '../../util/typeHandlers';
 
@@ -18,7 +18,7 @@ export const getSearch = async (req: Request, res: Response) => {
         res.status(400).send('page is not a valid number');
         return;
     }
-    const data = await getMoviesFromApi(req.params.title, page);
+    const data = await getSearchFromApi(req.params.title, page);
     if (isString(data) || data === undefined) {
         res.status(500).send(data);
         return;

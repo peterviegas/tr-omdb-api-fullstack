@@ -17,6 +17,6 @@ export const getMovieFromApi = async (id: string) => {
         }
         return data as MovieLongType[];
     } catch (err: any) {
-        return err.statusText as string;
+        return err.statusText as string; //make sure to return an actual string error
     }
 };
