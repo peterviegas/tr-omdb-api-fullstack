@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import ErrorComponent from '../ErrorHandler/ErrorComponent';
 import { MoviesContext, MoviesContextType } from './Context/MoviesContext';
 import { RenderMoviesList } from './RenderMoviesList';
+import MUIPagination from '../MUIPagination';
 
 // const movieArr = [
 //     {
@@ -78,7 +79,8 @@ import { RenderMoviesList } from './RenderMoviesList';
 // ];
 
 const MovieList: React.FC = () => {
-    const { movies, errorMsg } = useContext<MoviesContextType>(MoviesContext);
+    const { movies, errorMsg, count, page, onChange } =
+        useContext<MoviesContextType>(MoviesContext);
 
     const location = useLocation();
     const { pathname } = location;
@@ -88,6 +90,7 @@ const MovieList: React.FC = () => {
 
     return (
         <>
+            <MUIPagination count={count} page={page} onChange={onChange} />
             <div className='movieList'>
                 {RenderMoviesList(movies, searchedMovieName, () => {})}
             </div>

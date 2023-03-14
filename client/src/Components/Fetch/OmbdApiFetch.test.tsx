@@ -25,16 +25,22 @@ afterAll(() => server.close());
 
 test('handles server error 500', async () => {
     server.use(
-        rest.get( `http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`, (req, res, ctx) => {
-            return res(ctx.status(500));
-        })
+        rest.get(
+            `http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`,
+            (req, res, ctx) => {
+                return res(ctx.status(500));
+            }
+        )
     );
 });
 
 test('handles server error 404', async () => {
     server.use(
-        rest.get( `http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`, (req, res, ctx) => {
-            return res(ctx.status(404));
-        })
+        rest.get(
+            `http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`,
+            (req, res, ctx) => {
+                return res(ctx.status(404));
+            }
+        )
     );
 });

@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { MovieType } from './Type/MovieType.type';
-import { baseUrl } from '../Config/baseURL';
 
 export const RenderMoviesList = (
     movies: Array<MovieType>,
@@ -13,7 +12,7 @@ export const RenderMoviesList = (
         return (
             <div key={imdbID} className='movieList__item' onClick={onClick}>
                 <NavLink
-                    to={`${baseUrl}/movie/${searchedMovieName}/${imdbID}`}
+                    to={`/movie/${searchedMovieName}/${imdbID}`}
                     className='movieList__link'
                 >
                     <div className='movieList__img-container'>
