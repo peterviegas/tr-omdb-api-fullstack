@@ -47,7 +47,7 @@ const main = async () => {
     await db.connect();
     await db.query(`CREATE TABLE public.${DB_TABLE}
         (
-            id integer NOT NULL,
+            id SERIAL,
             movie_id TEXT UNIQUE,
             PRIMARY KEY (id)
         );`);
