@@ -131,6 +131,29 @@ The REST api will be located at;
 }
 ```
 
+there are 4 different endpoints for the wishlist;
+
+[http://localhost:3001/api/v1/wishlist](http://localhost:3001/api/v1/wishlist). is a GET method. This will return;
+```
+[val1, val2, val3 ...]
+```
+
+[http://localhost:3001/api/v1/wishlist/{id}](http://localhost:3001/api/v1/wishlist/). is a GET method. This will return;
+```
+{ id: true }
+```
+
+[http://localhost:3001/api/v1/wishlist](http://localhost:3001/api/v1/wishlist). is a POST method. This will return;
+```
+{ created: true }
+```
+
+[http://localhost:3001/api/v1/wishlist](http://localhost:3001/api/v1/wishlist). is a DELETE method. This will return;
+```
+{ deleted: true }
+```
+
+
 ## Tests
 Tests can be run
 ```
