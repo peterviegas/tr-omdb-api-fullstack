@@ -21,7 +21,6 @@ const MUIPagination: React.FC<MUIPaginationProp> = ({
                     alignItems: 'center',
                     width: '100%',
                     height: 100,
-                    mt: 10,
                     fontSize: 'large',
                 }}
             >
