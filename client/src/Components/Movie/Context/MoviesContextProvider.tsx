@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { MoviesContext } from './MoviesContext';
-import { MovieType } from '../Type/MovieType.type';
+import { MovieType, SearchResponseType } from '../Type/MovieType.type';
 import { OmdbApiFetch } from '../../Fetch/OmbdApiFetch';
 import { ErrorMessagesAPI } from '../../ErrorHandler/ErrorMessages';
 import { useLocation } from 'react-router-dom';
-//import { baseUrl } from '../../Config/baseURL';
+import { baseUrl, numOfMoviesPerPage } from '../../Config/baseURL';
+
+const convertToNumber = (str: string) => {
+    return parseInt(str);
+};
 
 interface MoviesProviderProp {
     children: React.ReactNode;
@@ -12,6 +16,8 @@ interface MoviesProviderProp {
 
 const MoviesContextProvider: React.FC<MoviesProviderProp> = ({ children }) => {
     const [movies, setMovies] = useState<Array<MovieType>>([]);
+    const [totalPages, setTotalPages] = useState<number>(1);
+    const [currentPage, setCurrentPage] = useState(1);
     const [errorMsg, setErrorMsg] = useState<string>('');
     const location = useLocation();
 
@@ -22,12 +28,14 @@ const MoviesContextProvider: React.FC<MoviesProviderProp> = ({ children }) => {
 
     const fetchMovie = async () => {
         setErrorMsg('');
-        const movieResponse = await OmdbApiFetch<Array<MovieType>>(
-            `http://www.omdbapi.com/?s=${searchedMovie}&type=movie&apikey=3fe67f82`
+        const movieResponse = await OmdbApiFetch<SearchResponseType>(
+            `${baseUrl}/search/${searchedMovie}/${currentPage}`
         );
 
         if (movieResponse && typeof movieResponse !== 'string') {
-            const movieArray: Array<MovieType> = movieResponse.map(
+            const { Search, totalResults } = movieResponse;
+
+            const movieArray: Array<MovieType> = Search.map(
                 (movie: MovieType) => {
                     const { Title, Year, imdbID, Type, Poster } = movie;
                     return {
@@ -40,6 +48,14 @@ const MoviesContextProvider: React.FC<MoviesProviderProp> = ({ children }) => {
                 }
             );
             setMovies(movieArray);
+
+            if (movieArray.length > 0) {
+                setTotalPages(
+                    Math.ceil(
+                        convertToNumber(totalResults) / numOfMoviesPerPage
+                    )
+                );
+            }
         } else if (!movieResponse) {
             setErrorMsg(errorFetch);
         } else {
@@ -51,10 +67,25 @@ const MoviesContextProvider: React.FC<MoviesProviderProp> = ({ children }) => {
 
     useEffect(() => {
         fetchMovie();
-    }, []);
+    }, [currentPage]);
+
+    const onChangeHandler = (
+        event: React.ChangeEvent<unknown>,
+        value: number
+    ) => {
+        setCurrentPage(value);
+    };
 
     return (
-        <MoviesContext.Provider value={{ movies: movies, errorMsg: errorMsg }}>
+        <MoviesContext.Provider
+            value={{
+                movies: movies,
+                errorMsg: errorMsg,
+                count: totalPages,
+                page: currentPage,
+                onChange: onChangeHandler,
+            }}
+        >
             {children}
         </MoviesContext.Provider>
     );

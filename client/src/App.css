@@ -237,6 +237,12 @@ body {
     text-decoration: none;
     color: inherit; }
 
+.pagination {
+  width: 100%;
+  font-size: 3rem !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-top: 10rem; }
+
 .footer {
   width: 100%;
   padding: 0.5rem 2rem;

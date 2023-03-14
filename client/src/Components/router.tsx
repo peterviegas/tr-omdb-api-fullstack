@@ -13,11 +13,11 @@ const ComponentRouter = () => (
         <Route path='/' element={<ComponentMainlayout />}>
             <Route index element={<Home />} />
             <Route
-                path='movielist/:title'
+                path='search/:title'
                 element={<ComponentMovieListProvider />}
             />
             <Route
-                path='movie/:title/:id'
+                path={`/movie/:title/:id`}
                 element={<ComponentMovieProvider />}
             />
             {/* <Route path='wishlist' element={} /> */}

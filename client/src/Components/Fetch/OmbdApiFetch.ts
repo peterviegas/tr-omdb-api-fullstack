@@ -17,13 +17,7 @@ export const OmdbApiFetch = async <T>(url: string): Promise<T | string | undefin
 
         const data = await response.json()
 
-        if (data.Search) {
-            const { Search } = data;
-            return Search;
-        }
-
         return data;
-
 
     } catch (err: unknown) {
         let message: string = "unknown error";

@@ -36,6 +36,8 @@ const fakeData = {
     Response: 'True',
 };
 
+const error = { Response: 'False', Error: 'Too many results' };
+
 describe('GET /api/v1/movie endpoint', () => {
     afterEach(() => {
         jest.restoreAllMocks();
@@ -72,5 +74,15 @@ describe('GET /api/v1/movie API mocks', () => {
         );
         const res = await request(app).get('/api/v1/movie/tt0068346');
         expect(res.statusCode).toBe(500);
+    });
+    it('Should return a error from the server', async () => {
+        server.use(
+            rest.get(`http://www.omdbapi.com/`, (req, res, ctx) => {
+                return res(ctx.status(400), ctx.json(error));
+            })
+        );
+        const res = await request(app).get('/api/v1/movie/tt0068346');
+        expect(res.body).toStrictEqual(error);
+        expect(res.statusCode).toBe(400);
     });
 });

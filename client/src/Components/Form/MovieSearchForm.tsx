@@ -15,7 +15,7 @@ const MovieSearchForm: React.FC = () => {
 
     const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        navigate(`/movielist/${searchedMovie}`);
+        navigate(`/search/${searchedMovie}`);
     };
 
     return (
