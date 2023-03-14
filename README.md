@@ -30,10 +30,21 @@ Make sure you have a new version of node installed on your computer then run
 npm run custom-install
 ```
 
-you must also populate `.env.local` in `server/` with the following key
+you must also populate `.env.local` in `server/` with the following key(s)
 ```
-API_KEY=<your-key>
+API_KEY=<your-key> //this value is required
+SERVER_PORT=3001 //optional value
+DB_HOST=localhost //optional value
+DB_PORT=5432 //optional value
+DB_ROOT_USER=postgres //only used for database setup
+DB_ROOT_PASSWORD=password //only used for database setup
+DB_USER=movie_user //optional value
+DB_PASSWORD=password //optional value
+DB_DATABASE=movie_db // optional value
+DB_TABLE=movie_table // optional value
 ```
+
+provided is a postgres setup script it is not robust or well tested. it can be run from `npm run db-setup`.
 
 ## Usage
 to run the application

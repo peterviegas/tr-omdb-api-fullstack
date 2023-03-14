@@ -3,14 +3,15 @@ dotenv.config({ path: `.env.local` });
 
 export const {
     API_KEY,
-    DB_HOST,
-    DB_PORT,
-    DB_USER,
-    DB_PASSWORD,
-    DB_DATABASE,
-    DB_TABLE,
+    DB_HOST = 'localhost',
+    DB_USER = 'movie_user',
+    DB_PASSWORD = 'password',
+    DB_DATABASE = 'movie_db',
+    DB_TABLE = 'movie_table',
 } = process.env;
 
-export const PORT = 3001;
+export const DB_PORT = parseInt(process.env.DB_PORT || ('5432' as string));
+
+export const PORT = parseInt(process.env.SERVER_PORT || ('3001' as string));
 
 export const isApiKeyPresent = () => (API_KEY ? true : false);
