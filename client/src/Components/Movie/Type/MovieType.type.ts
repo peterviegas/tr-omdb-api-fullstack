@@ -80,4 +80,7 @@ export type MovieType = {
 }
 
 
-
+export type SearchResponseType = {
+    Search: Array<MovieType>;
+    totalResults: string
+}
