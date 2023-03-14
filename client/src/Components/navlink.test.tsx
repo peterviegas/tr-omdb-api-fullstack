@@ -32,7 +32,7 @@ describe("Testing for the Navlink Component MoviesList", () => {
 				<Header />
 			</BrowserRouter>
 		);
-		const titleElement=screen.getByText(/MoviesList/i);
+		const titleElement=screen.getByText(/Wishlist/i);
 		expect(titleElement).toBeInTheDocument();
 	});
 	
@@ -42,10 +42,13 @@ describe("Testing for the Navlink Component MoviesList", () => {
 				<ComponentNavlink />
 			</BrowserRouter>
 		);
-		const titleElement=screen.getByText(/MoviesList/i);
+		const titleElement=screen.getByText(/Wishlist/i);
 		expect(titleElement).toBeInTheDocument();
 	});
 });
+
+
+
 /*
 describe("Testing for the Navlink Component Movie", () => {
 	test("renders Movie", () => {
