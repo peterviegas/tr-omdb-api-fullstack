@@ -12,6 +12,8 @@ const fakeData = {
     Poster: 'https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg',
 };
 
+const error = { Response: 'False', Error: 'Too many results' };
+
 describe('GET /api/v1/search endpoint', () => {
     afterEach(() => {
         jest.restoreAllMocks();
@@ -53,5 +55,15 @@ describe('GET /api/v1/movies API mocks', () => {
         );
         const res = await request(app).get('/api/v1/search/fake');
         expect(res.statusCode).toBe(500);
+    });
+    it('Should return a error from the server', async () => {
+        server.use(
+            rest.get(`http://www.omdbapi.com/`, (req, res, ctx) => {
+                return res(ctx.status(400), ctx.json(error));
+            })
+        );
+        const res = await request(app).get('/api/v1/search/fake');
+        expect(res.body).toStrictEqual(error);
+        expect(res.statusCode).toBe(400);
     });
 });
