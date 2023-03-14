@@ -1,8 +1,13 @@
-import { render, unmountComponentAtNode } from "react-dom";
+//import { render, unmountComponentAtNode } from "react-dom";
 import { act } from 'react-dom/test-utils';
 import { MemoryRouter } from "react-router-dom";
 import App from './../../App';
 import { RenderMoviesList } from './RenderMoviesList';
+import {setupServer} from 'msw/node';
+import {rest} from 'msw';
+
+import { render, screen } from '@testing-library/react'
+import React from 'react'
 
  const movieArr = [
      {
@@ -77,6 +82,42 @@ import { RenderMoviesList } from './RenderMoviesList';
      },
  ];
 
+ const genre = 'action';
+
+ const server = setupServer(
+    // capture "GET /greeting" requests
+    rest.get(`http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`, async (req, res, ctx) => {
+      // respond using a mocked JSON body
+      return res(ctx.json({ Title: "Last Action Hero", 
+      Year: "1993", 
+      imdbID: "tt0107362", 
+      Type: "movie", 
+      Poster: "https://m.media-amazon.com/images/M/MV5BNjdhOGY1OTktYWJkZC00OGY5LWJhY2QtZmQzZDA2MzY5MmNmXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg"}
+      ))
+    }),
+  )
+  
+  beforeAll(() => server.listen())
+  afterEach(() => server.resetHandlers())
+  afterAll(() => server.close())
+
+
+ test('renders class App', () => {
+    render(<App />)
+    screen.queryByRole('class',{description: `App`})
+})
+
+test('handles 418 error', async () => {
+    server.use(
+      rest.get('https://swapi.dev/api/people/1', (req, res, ctx) => {
+        return res(ctx.status(418))
+      }),
+    )
+    render(<App />);
+    screen.queryByRole('alertdialog',{description: `418 I'm a tea pot 🫖, silly`})
+  });
+
+  
 /*
 describe("RenderMoviesList", () => {
 	test("Should match a snapshot", () => {

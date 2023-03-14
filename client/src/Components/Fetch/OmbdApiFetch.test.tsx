@@ -1,5 +1,7 @@
 import { setupServer } from 'msw/node';
 import { rest } from 'msw';
+import request from 'supertest';
+import { app } from '../../../../server/src/app';
 
 const genre = 'action';
 const server = setupServer(
@@ -25,16 +27,26 @@ afterAll(() => server.close());
 
 test('handles server error 500', async () => {
     server.use(
-        rest.get( `http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`, (req, res, ctx) => {
-            return res(ctx.status(500));
-        })
+        rest.get(
+            `http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`,
+            (req, res, ctx) => {
+                return res(ctx.status(500));
+            }
+        )
     );
+    const res = await request(app).get('/api/v1/movie/tt0068346');
+    expect(res.statusCode).toBe(500);
 });
 
-test('handles server error 404', async () => {
+test('handles server error 403', async () => {
     server.use(
-        rest.get( `http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`, (req, res, ctx) => {
-            return res(ctx.status(404));
-        })
+        rest.get(
+            `http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`,
+            (req, res, ctx) => {
+                return res(ctx.status(403));
+            }
+        )
     );
+    const res = await request(app).get(`http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`);
+    expect(res.statusCode).toBe(403);
 });
