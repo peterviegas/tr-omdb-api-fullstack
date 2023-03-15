@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { MovieType } from './Type/MovieType.type';
+const noImage = require('../../Images/noImage.jpg');
 
 export const RenderMoviesList = (
     movies: Array<MovieType>,
@@ -18,7 +19,7 @@ export const RenderMoviesList = (
                     <div className='movieList__img-container'>
                         <img
                             className='movieList__img'
-                            src={Poster}
+                            src={Poster === 'N/A' ? noImage : Poster}
                             alt={Title}
                         />
                     </div>

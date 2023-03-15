@@ -12,6 +12,8 @@ import { baseUrl } from '../Config/baseURL';
 
 const { errorFetch } = ErrorMessagesAPI;
 
+const noImage = require('../../Images/noImage.jpg');
+
 //id is imbdId from Ombd json
 // const id = 'tt0145487';
 // const url: string = `http://www.omdbapi.com/?i=${id}&type=movie&apikey=3fe67f82`;
@@ -131,7 +133,14 @@ const MovieCard: React.FC = () => {
                     <button className='btn__movieCard'>+ Wishlist</button>
                 </div>
                 <div className='movieCard__imgBox'>
-                    <img src={selectedMovie.Poster} alt={selectedMovie.Title} />
+                    <img
+                        src={
+                            selectedMovie.Poster === 'N/A'
+                                ? noImage
+                                : selectedMovie.Poster
+                        }
+                        alt={selectedMovie.Title}
+                    />
                 </div>
             </div>
             {errorMsg && <ErrorComponent>{errorMsg}</ErrorComponent>}
