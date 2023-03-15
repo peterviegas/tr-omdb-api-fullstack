@@ -1,10 +1,14 @@
 .about {
     width: 100%;
-    background-image: $bg-aboutme;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+
+
+    &__bg {
+        background-image: $bg-aboutme;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+    }
 
     &__img-box {
         height: 30rem
