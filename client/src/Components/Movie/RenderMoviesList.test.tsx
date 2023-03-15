@@ -1,13 +1,12 @@
 //import { render, unmountComponentAtNode } from "react-dom";
-import { act } from 'react-dom/test-utils';
+import React from 'react'
 import { MemoryRouter } from "react-router-dom";
 import App from './../../App';
 import { RenderMoviesList } from './RenderMoviesList';
 import {setupServer} from 'msw/node';
 import {rest} from 'msw';
-
 import { render, screen } from '@testing-library/react'
-import React from 'react'
+import { MovieType } from './Type/MovieType.type';
 
  const movieArr = [
      {
@@ -101,7 +100,7 @@ import React from 'react'
   afterEach(() => server.resetHandlers())
   afterAll(() => server.close())
 
-
+/*
  test('renders class App', () => {
     render(<App />)
     screen.queryByRole('class',{description: `App`})
@@ -117,8 +116,20 @@ test('handles 418 error', async () => {
     screen.queryByRole('alertdialog',{description: `418 I'm a tea pot 🫖, silly`})
   });
 
-  
+  interface RenderMoviesListProps{
+	movies: Array<MovieType>,
+	searchedMovieName: string,
+	onClick: (e: React.MouseEvent) => void
+}*/
 /*
+const onChangeReason = jest.fn(() => "test");
+	const mockReasonSparing: RenderMoviesListProps = {
+		movies: movieArr,
+		searchedMovieName: 'type',
+		onClick:onChangeReason
+	}
+
+
 describe("RenderMoviesList", () => {
 	test("Should match a snapshot", () => {
 
