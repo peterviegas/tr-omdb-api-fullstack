@@ -9,7 +9,7 @@
     box-shadow: $box-shadow--btn-blue;
 
     @include respond(small-tab-portrait) {
-        padding: 3rem $p-sides;
+        padding: $p-sides;
     }
 
     @include respond(phone) {
