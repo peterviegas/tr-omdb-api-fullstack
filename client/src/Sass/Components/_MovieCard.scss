@@ -6,11 +6,13 @@
   // background-color: $color-black--light;
   padding: 3rem;
   //box-shadow: rgba(255, 255, 255, .2) 0px 0px 1rem .2rem;
+  margin-bottom: 10rem;
 
 
   @include respond(small-tab) {
     width: 80%;
     padding: 0;
+    margin-bottom: 0;
   }
 
   @include respond(large-tab-portrait) {

@@ -29,11 +29,7 @@ const MovieSearchForm: React.FC = () => {
                     value={searchedMovie}
                 />
                 <button className='btn__search-homepage'>
-                    <img
-                        src={searchIcon}
-                        className='home__btn-img'
-                        alt='search icon'
-                    />
+                    <img src={searchIcon} alt='search icon' />
                 </button>
             </div>
         </form>

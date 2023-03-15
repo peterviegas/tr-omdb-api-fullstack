@@ -1,0 +1,48 @@
+.heading {
+    &__3 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+        padding: 1.5rem 0;
+        text-align: center;
+        letter-spacing: 1px;
+        font-weight: 400;
+
+        @include respond (large-tab-portrait) {
+            font-size: 1.6rem;
+            margin: 0 .5rem
+        }
+    }
+
+    &__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include respond(large-tab-portrait) {
+            margin-top: 2rem;
+        }
+
+        img {
+            width: 3rem;
+            height: 3rem;
+            margin-top: 2.5rem;
+            margin-right: 1rem;
+
+            @include respond(large-tab-portrait) {
+                margin-top: 0;
+            }
+        }
+
+
+    }
+
+    &__hero {
+        font-size: 4rem;
+        position: absolute;
+        top: 38%;
+        right: 6rem;
+        transform: translateY(-50%);
+        color: $color-white--light;
+        border-bottom: 10px solid $color-red
+    }
+}

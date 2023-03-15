@@ -1,6 +1,22 @@
 .pagination {
-    width: 100%;
-    font-size: 3rem !important;
-    background-color: $color-white--lighter;
-    margin-top: 10rem;
+    height: 4rem;
+    margin: 5rem 0;
+    display: flex;
+    align-items: center;
+    // background-color: $color-white--lighter;
+    border-radius: 10rem;
+    box-shadow: $box-shadow--btn-blue;
+
+    @include respond (small-tab-portrait) {
+        margin: 6rem 0 3rem 0;
+    }
+
+    &__down-arrow {
+        width: 15%;
+        height: 2rem;
+        // background-color: $color-white--lighter;
+        -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+        border: 8px solid $color-electric-blue;
+    }
 }

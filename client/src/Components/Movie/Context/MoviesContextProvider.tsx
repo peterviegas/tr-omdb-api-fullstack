@@ -5,6 +5,7 @@ import { OmdbApiFetch } from '../../Fetch/OmbdApiFetch';
 import { ErrorMessagesAPI } from '../../ErrorHandler/ErrorMessages';
 import { useLocation } from 'react-router-dom';
 import { baseUrl, numOfMoviesPerPage } from '../../Config/baseURL';
+import Loading from '../../Loading/Loading';
 
 const convertToNumber = (str: string) => {
     return parseInt(str);
@@ -19,6 +20,7 @@ const MoviesContextProvider: React.FC<MoviesProviderProp> = ({ children }) => {
     const [totalPages, setTotalPages] = useState<number>(1);
     const [currentPage, setCurrentPage] = useState(1);
     const [errorMsg, setErrorMsg] = useState<string>('');
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const location = useLocation();
 
     const { pathname } = location;
@@ -28,6 +30,7 @@ const MoviesContextProvider: React.FC<MoviesProviderProp> = ({ children }) => {
 
     const fetchMovie = async () => {
         setErrorMsg('');
+        setIsLoading(true);
         const movieResponse = await OmdbApiFetch<SearchResponseType>(
             `${baseUrl}/search/${searchedMovie}/${currentPage}`
         );
@@ -56,12 +59,14 @@ const MoviesContextProvider: React.FC<MoviesProviderProp> = ({ children }) => {
                     )
                 );
             }
+
+            setIsLoading(false);
         } else if (!movieResponse) {
+            setIsLoading(false);
             setErrorMsg(errorFetch);
         } else {
-            console.log(movieResponse);
+            setIsLoading(false);
             setErrorMsg(movieResponse);
-            console.log('error');
         }
     };
 
@@ -86,6 +91,7 @@ const MoviesContextProvider: React.FC<MoviesProviderProp> = ({ children }) => {
                 onChange: onChangeHandler,
             }}
         >
+            {isLoading ? <Loading /> : ''}
             {children}
         </MoviesContext.Provider>
     );

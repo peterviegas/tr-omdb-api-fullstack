@@ -3,7 +3,8 @@ import { useLocation } from 'react-router-dom';
 import ErrorComponent from '../ErrorHandler/ErrorComponent';
 import { MoviesContext, MoviesContextType } from './Context/MoviesContext';
 import { RenderMoviesList } from './RenderMoviesList';
-import MUIPagination from '../MUIPagination';
+import MUIPagination from '../Pagination/MUIPagination';
+const searchIcon = require('../../Images/search.png');
 
 // const movieArr = [
 //     {
@@ -90,10 +91,23 @@ const MovieList: React.FC = () => {
 
     return (
         <>
+            <div className='heading__img'>
+                <img
+                    src={searchIcon}
+                    className='home__btn-img'
+                    alt='search icon'
+                />
+                <h3 className='heading__3'>
+                    {`Search Results for : ${searchedMovieName}`}
+                </h3>
+            </div>
+
+            <div className='pagination__down-arrow'></div>
             <MUIPagination count={count} page={page} onChange={onChange} />
             <div className='movieList'>
                 {RenderMoviesList(movies, searchedMovieName, () => {})}
             </div>
+            <MUIPagination count={count} page={page} onChange={onChange} />
             {errorMsg && <ErrorComponent>{errorMsg}</ErrorComponent>}
         </>
     );

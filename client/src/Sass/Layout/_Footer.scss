@@ -1,10 +1,10 @@
 .footer {
     width: 100%;
-    padding: .5rem $p-sides;
+    padding: 1rem $p-sides;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $color-grey--dark;
+    border-top: 2px solid cyan;
 
     &__logobox {
         font-size: 1rem;
@@ -26,7 +26,6 @@
         @include respond(small-tab) {
             font-size: 1rem;
         }
-
     }
 
 
