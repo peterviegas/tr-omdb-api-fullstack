@@ -153,6 +153,11 @@ there are 4 different endpoints for the wishlist;
 { deleted: true }
 ```
 
+for wishlist POST and DELETE endpoints the api expects the following format;
+```
+{ id: "tt0458481" }
+```
+
 
 ## Tests
 Tests can be run
