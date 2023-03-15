@@ -1,5 +1,5 @@
 import React from 'react';
-const locationIcon = require('../../Images/location-pin (1).png');
+const locationIcon = require('../../Images/location-pin.png');
 const welcomeImg = require('../../Images/welcome.png');
 
 const ComponentAbout: React.FC = () => (
@@ -34,7 +34,6 @@ const ComponentAbout: React.FC = () => (
                     <img src={locationIcon} alt={'location icon'} />
                 </div>
                 <p className='about__details--2'>
-                    {' '}
                     Meet us @ 14 ipsum valley, Fakelandia street, London city,
                     United Kingdom
                 </p>
