@@ -1,4 +1,4 @@
-const loader = require('../../Images/loading3.png');
+const loader = require('../../Images/loading.png');
 
 const Loading = () => {
     return (
