@@ -3,7 +3,7 @@ import Home from './Home/home';
 
 import NotFound from './notfound';
 import { ComponentMainlayout } from './mainlayout';
-import ComponentAbout from './about';
+import ComponentAbout from './About/about';
 import ComponentTeam from './Team/team';
 import ComponentMovieProvider from './Movie/MovieProvider';
 import ComponentMovieListProvider from './Movie/MovieListProvider';

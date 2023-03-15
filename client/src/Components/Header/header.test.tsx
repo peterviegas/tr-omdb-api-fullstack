@@ -1,9 +1,9 @@
-import { render, screen } from "@testing-library/react";
-import ComponentHeader from "./header";
-import { BrowserRouter } from "react-router-dom";
-import ComponentNavlink from './../navlink';
+import { render, screen } from '@testing-library/react';
+import ComponentHeader from './header';
+import { BrowserRouter } from 'react-router-dom';
+import ComponentNavlink from '../Navlink/navlink';
 
-describe("Testing for the Header Component Label", () => {
+describe('Testing for the Header Component Label', () => {
     test(`When the component is rendered, then the Header Component must be present`, async () => {
         render(
             <BrowserRouter>
@@ -15,7 +15,7 @@ describe("Testing for the Header Component Label", () => {
     });
 });
 
-describe("Test for header component navigation", () => {
+describe('Test for header component navigation', () => {
     test(`When the component is rendered, then the Header Component must be present`, async () => {
         render(
             <BrowserRouter>
