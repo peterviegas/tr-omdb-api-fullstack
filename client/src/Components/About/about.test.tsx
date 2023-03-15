@@ -11,7 +11,7 @@ describe('Testing for the about Component Label', () => {
         );
 
         const testHome = screen.getByText(
-            /This website created by PNGC group./i
+            /This website is created by PNGC group./i
         );
         expect(testHome).toBeInTheDocument();
     });

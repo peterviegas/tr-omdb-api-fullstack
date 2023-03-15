@@ -100,12 +100,12 @@ import { MovieType } from './Type/MovieType.type';
   afterEach(() => server.resetHandlers())
   afterAll(() => server.close())
 
-/*
+
  test('renders class App', () => {
     render(<App />)
     screen.queryByRole('class',{description: `App`})
 })
-
+/*
 test('handles 418 error', async () => {
     server.use(
       rest.get('https://swapi.dev/api/people/1', (req, res, ctx) => {

@@ -26,7 +26,7 @@ test("Router Movie", async () => {
 		<Router />
 		</MemoryRouter>
 	);
-	expect(screen.getByText(/Other movies of your search list/i)).toBeInTheDocument();
+	expect(screen.getByText(/Similar movies you may like/i)).toBeInTheDocument();
 });
 
 test("Router About", async () => {
