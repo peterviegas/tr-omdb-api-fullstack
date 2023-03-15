@@ -1,0 +1,76 @@
+.about {
+    width: 100%;
+    background-image: $bg-aboutme;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+    &__img-box {
+        height: 30rem
+    }
+
+    &__contents {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        &--1 {
+            width: 100%;
+            font-weight: 400;
+        }
+
+        &--1a {
+            display: flex;
+            gap: 3rem;
+            padding: 0 1rem
+        }
+
+        &--2 {
+            width: 80%;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            font-size: 1rem;
+            font-weight: 300;
+            margin-bottom: 5rem;
+        }
+    }
+
+    &__img {
+        width: 50%;
+        align-self: flex-start;
+        background-color: #ffffff59;
+        padding: 1rem;
+    }
+
+    &__para {
+        width: 50%;
+        background-color: $color-black;
+        align-self: flex-end;
+        padding: 2rem;
+        margin-top: 11rem;
+    }
+
+    &__details--2 {
+        background-color: $color-black;
+        padding: 1rem;
+        font-weight: 500;
+    }
+
+    &__description {
+        &--1 {
+            font-size: 1.4rem;
+        }
+
+        &--2,
+        &--3 {
+            font-size: 1rem;
+            font-weight: 300;
+            margin-top: 1rem;
+        }
+
+    }
+}

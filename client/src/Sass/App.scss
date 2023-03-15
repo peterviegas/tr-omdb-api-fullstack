@@ -6,7 +6,9 @@
 @import "Base/Typography";
 
 @import "Components/Button";
+@import "Components/Error";
 @import "Components/Icon";
+@import "Components/Loading";
 @import "Components/MovieCard";
 @import "Components/MovieList";
 @import "Components/Pagination";
@@ -15,7 +17,7 @@
 @import "Layout/Header";
 @import "Layout/Navigation";
 
+@import "Pages/About";
 @import "Pages/Home";
-@import "Pages/Genre";
 @import "Pages/MoviePage";
 @import "Pages/WishList";

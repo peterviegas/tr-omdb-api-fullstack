@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-const openBtn = require('../Images/menu.png');
-const closeBtn = require('../Images/close.png');
+const openBtn = require('../../Images/menu.png');
+const closeBtn = require('../../Images/close.png');
 
 const ComponentNavlink: React.FC = () => {
     const [clicked, setClicked] = useState<boolean>(false);
