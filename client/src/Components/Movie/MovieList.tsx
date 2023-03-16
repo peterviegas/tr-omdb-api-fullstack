@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import ErrorComponent from '../ErrorHandler/ErrorComponent';
 import { MoviesContext, MoviesContextType } from './Context/MoviesContext';
-import { RenderMoviesList } from './RenderMoviesList';
+import RenderMoviesList from './RenderMoviesList';
 import MUIPagination from '../Pagination/MUIPagination';
 const searchIcon = require('../../Images/search.png');
 
@@ -105,7 +105,11 @@ const MovieList: React.FC = () => {
             <div className='pagination__down-arrow'></div>
             <MUIPagination count={count} page={page} onChange={onChange} />
             <div className='movieList'>
-                {RenderMoviesList(movies, searchedMovieName, () => {})}
+                <RenderMoviesList
+                    movies={movies}
+                    searchedMovieName={searchedMovieName}
+                    onClick={() => {}}
+                />
             </div>
             <MUIPagination count={count} page={page} onChange={onChange} />
             {errorMsg && <ErrorComponent>{errorMsg}</ErrorComponent>}

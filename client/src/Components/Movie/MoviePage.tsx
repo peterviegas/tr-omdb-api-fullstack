@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { MovieType } from './Type/MovieType.type';
 import { MoviesContextType, MoviesContext } from './Context/MoviesContext';
-import { RenderMoviesList } from './RenderMoviesList';
+import RenderMoviesList from './RenderMoviesList';
 import MovieCard from './MovieCard';
 import { useLocation } from 'react-router-dom';
 import MUIPagination from '../Pagination/MUIPagination';
@@ -34,11 +34,11 @@ const MoviePage: React.FC = () => {
             <div className='pagination__down-arrow'></div>
             <MUIPagination count={count} page={page} onChange={onChange} />
             <div className='moviePage__list'>
-                {RenderMoviesList(
-                    unselectedMovies(imdbID),
-                    searchedMovieName,
-                    onClickHandler
-                )}
+                <RenderMoviesList
+                    movies={unselectedMovies(imdbID)}
+                    searchedMovieName={searchedMovieName}
+                    onClick={onClickHandler}
+                />
             </div>
             <MUIPagination count={count} page={page} onChange={onChange} />
         </div>
