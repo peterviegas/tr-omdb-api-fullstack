@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import ComponentNavlink from './navlink';
-import Header from '../Header/header';
+import ComponentNavlink from './Navlink';
+import Header from '../Header/Header';
 
 describe('Testing for the Navlink Component Home', () => {
     test('renders Home', () => {

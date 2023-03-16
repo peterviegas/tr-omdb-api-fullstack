@@ -61,16 +61,16 @@
     }
 
     &__heading3 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         margin-bottom: 1rem;
 
         @include respond(large-tab) {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
         }
 
         @include respond(small-tab) {
             background-image: $bg-home--900;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
 
         @include respond(phone) {
@@ -79,16 +79,16 @@
     }
 
     &__content {
-        font-size: 1rem;
+        font-size: 1.1rem;
         font-weight: 100;
 
         @include respond(large-tab) {
-            font-size: .8rem;
+            font-size: 1rem;
         }
     }
 
     &__content-bold {
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-weight: 500;
         margin: 1rem 0;
     }
@@ -113,7 +113,7 @@
     &__inputbox {
         display: flex;
         align-items: center;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         color: $color-white--light;
         border: none;
     }
@@ -121,7 +121,7 @@
     &__input {
         width: 100%;
         padding: 1.2rem 2rem;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         color: $color-white--light;
         border: none;
         background-color: $color-white--lighter;
@@ -140,7 +140,7 @@
 
         @include respond(small-tab-portrait) {
             &::placeholder {
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
         }
 

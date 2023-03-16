@@ -1,12 +1,12 @@
 import { Route, Routes } from 'react-router';
-import Home from './Home/home';
+import Home from '../Home/Home';
 
-import NotFound from './notfound';
-import { ComponentMainlayout } from './mainlayout';
-import ComponentAbout from './About/about';
-import ComponentTeam from './Team/team';
-import ComponentMovieProvider from './Movie/MovieProvider';
-import ComponentMovieListProvider from './Movie/MovieListProvider';
+import NotFound from '../NotFound/notfound';
+import { ComponentMainlayout } from '../Layout/Mainlayout';
+import ComponentAbout from '../About/About';
+import ComponentTeam from '../Team/ComponentTeam';
+import ComponentMovieProvider from '../Movie/MovieProvider';
+import ComponentMovieListProvider from '../Movie/MovieListProvider';
 
 const ComponentRouter = () => (
     <Routes>

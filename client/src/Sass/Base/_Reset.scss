@@ -13,7 +13,7 @@ body {
    height: 100%;
    background-image: $bg-main;
    background-repeat: repeat;
-   word-spacing: .5rem;
+   word-spacing: .3rem;
    background-position: top;
    position: relative;
    z-index: 0;
@@ -25,11 +25,10 @@ body {
 
 .App {
    color: $font-color;
-   font-family: 'Lato', Verdana, Geneva, Tahoma, sans-serif;
-   font-size: 1.3rem;
+   font-family: 'Inconsolata', Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 1.4rem;
    font-weight: 100;
    line-height: 1.7;
-   letter-spacing: 1px;
 }
 
 .main {

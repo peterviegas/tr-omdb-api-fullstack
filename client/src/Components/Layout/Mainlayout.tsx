@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import ComponentHeader from './Header/header';
-import ComponentFooter from './Footer/footer';
+import ComponentHeader from '../Header/Header';
+import ComponentFooter from '../Footer/Footer';
 
 export const ComponentMainlayout: React.FC = () => (
     <div className='container'>
