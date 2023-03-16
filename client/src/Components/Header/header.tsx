@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import ComponentNavlink from '../Navlink/navlink';
+import ComponentNavlink from '../Navlink/Navlink';
 const logo = require('../../Images/film.png');
 
 const ComponentHeader: React.FC = () => (
