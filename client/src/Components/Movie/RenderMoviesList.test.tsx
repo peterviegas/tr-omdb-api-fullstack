@@ -7,6 +7,11 @@ import {setupServer} from 'msw/node';
 import {rest} from 'msw';
 import { render, screen } from '@testing-library/react'
 import { MovieType } from './Type/MovieType.type';
+import { Response } from 'express';
+const { movies } = require ('./RenderMoviesList');
+
+
+
 
  const movieArr = [
      {
@@ -101,10 +106,14 @@ import { MovieType } from './Type/MovieType.type';
   afterAll(() => server.close())
 
 
+
  test('renders class App', () => {
     render(<App />)
     screen.queryByRole('class',{description: `App`})
 })
+
+
+
 /*
 test('handles 418 error', async () => {
     server.use(
@@ -114,23 +123,27 @@ test('handles 418 error', async () => {
     )
     render(<App />);
     screen.queryByRole('alertdialog',{description: `418 I'm a tea pot 🫖, silly`})
-  });
-
+  });*/
+/*
   interface RenderMoviesListProps{
 	movies: Array<MovieType>,
 	searchedMovieName: string,
 	onClick: (e: React.MouseEvent) => void
-}*/
-/*
+}
+
 const onChangeReason = jest.fn(() => "test");
-	const mockReasonSparing: RenderMoviesListProps = {
-		movies: movieArr,
-		searchedMovieName: 'type',
-		onClick:onChangeReason
-	}
+const mockReasonSparing: RenderMoviesListProps = {
+    movies: movieArr,
+    searchedMovieName: 'type',
+    onClick:onChangeReason
+}
 
 
-describe("RenderMoviesList", () => {
+const {renderMov } = require ('RenderMoviesList');
+
+renderMov.*/
+
+/*describe("RenderMoviesList", () => {
 	test("Should match a snapshot", () => {
 
 		const root = document.createElement('div');
@@ -138,7 +151,7 @@ describe("RenderMoviesList", () => {
 
 		render (
 			<MemoryRouter initialEntries={['/']}>
-				<RenderMoviesList  />
+				<RenderMoviesList:(...mockReasonSparing)  />
 			</MemoryRouter>,
 			root
 		)

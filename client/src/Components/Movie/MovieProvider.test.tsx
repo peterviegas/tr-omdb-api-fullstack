@@ -13,7 +13,7 @@ describe('Testing for the ComponentMovieProvider - navigating to the component M
         expect(testHome).toBeInTheDocument();
     });
 
-	test(`When the Loading function renders, checks if it is present through the quantity`, async () => {
+	test(`When the Loading function renders, checks if it is present through the quantity loading`, async () => {
         const { container } = render(
             <BrowserRouter>
                 <ComponentMovieProvider />
@@ -23,26 +23,6 @@ describe('Testing for the ComponentMovieProvider - navigating to the component M
         expect(testHome.length).toBe(1);
     });
 
-/*
-	test(`When the component is rendered, then the Wishlist option must be present`, async () => {
-        render(
-            <BrowserRouter>
-                <ComponentMainlayout />
-            </BrowserRouter>
-        );
-        const testWishlist = screen.getByText(/Wishlist/i);
-        expect(testWishlist).toBeInTheDocument();
-    });
-
-	test(`When the component is rendered, then the About option must be present`, async () => {
-        render(
-            <BrowserRouter>
-                <ComponentMainlayout />
-            </BrowserRouter>
-        );
-        const testAbout = screen.getByText(/About/i);
-        expect(testAbout).toBeInTheDocument();
-    });*/
 });
 
 describe('Testing for the ComponentMovieProvider - navigating to the component MoviePage', () => {
