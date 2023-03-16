@@ -14,6 +14,7 @@ $color-grey: #828181;
 $color-blue: #4b7bec;
 $color-blue--light: rgba(75, 123, 236, 0.3);
 $color-electric-blue: rgba(153, 255, 255, .8);
+$color-electric-blue--light: rgba(153, 255, 255, .3);
 $color-middle-blue: #7ed6df;
 
 $color-error: #f44336;
@@ -23,21 +24,22 @@ $font-color: rgba(211, 211, 211, 0.635);
 
 $box-shadow--small: 0 0 1rem 0.2rem rgba(255, 255, 255, 0.2);
 $box-shadow--medium: 0 0 0.7rem 0.2rem rgba(255,
-                255,
-                255, 0.8);
+        255,
+        255, 0.8);
 $box-shadow--btn: 0 0 0.2rem 0.2rem rgba(255,
-                255,
-                255, 0.2);
+        255,
+        255, 0.2);
 $box-shadow--btn-white: 0 0 0.6rem 0.05rem rgba(255,
-                255,
-                255, 0.2);
+        255,
+        255, 0.2);
 $box-shadow--btn-blue: 0 0 0.6rem 0.05rem rgba(75,
-                123,
-                236, 0.7);
+        123,
+        236, 0.7);
 
 $bg-main: linear-gradient(45deg, rgba(0, 0, 0, .95) 33%, rgba(0, 0, 0, 0.9) 100%), url('./Images/bg-1.jpg');
 $bg-home: linear-gradient(360deg, rgba(0, 0, 0, .5) 33%, rgba(0, 0, 0, 0.9) 100%), url('./Images/spiderman-img.jpg');
 $bg-aboutme: linear-gradient(360deg, rgba(0, 0, 0, .5) 33%, rgba(0, 0, 0, 0.9) 100%), url('./Images/aboutmeImg.jpg');
+$bg-team: linear-gradient(360deg, rgba(0, 0, 0, .5) 33%, rgba(0, 0, 0, 0.9) 100%), url('./Images/team1.jpg');
 $bg-home--1440: linear-gradient(360deg, rgba(0, 0, 0, .5) 33%, rgba(0, 0, 0, 0.9) 100%), url('./Images/spiderman-1440.jpg');
 $bg-home--900: linear-gradient(360deg, rgba(0, 0, 0, .5) 33%, rgba(0, 0, 0, 0.9) 100%), url('./Images/spiderman-900.jpg');
 $bg-home--1024: linear-gradient(360deg, rgba(0, 0, 0, .5) 33%, rgba(0, 0, 0, 0.9) 100%), url('./Images/spiderman-1024.jpg');
