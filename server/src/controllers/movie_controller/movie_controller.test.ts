@@ -52,6 +52,8 @@ describe('GET /api/v1/movie endpoint', () => {
 
 const server = setupServer();
 
+
+
 describe('GET /api/v1/movie API mocks', () => {
     beforeAll(() => server.listen({ onUnhandledRequest: 'bypass' }));
     afterEach(() => server.resetHandlers());

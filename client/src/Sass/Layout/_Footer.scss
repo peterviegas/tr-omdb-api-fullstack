@@ -7,28 +7,30 @@
     border-top: 2px solid cyan;
 
     &__logobox {
-        font-size: 1rem;
+        font-size: 1.2rem;
         margin: auto 0;
     }
 
     &__logo {
         display: flex;
         align-items: center;
-        font-size: 1.3rem;
+        font-size: 1.6rem;
         font-weight: 500;
         text-decoration: none;
         color: $font-color;
 
         @include respond(large-tab) {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
 
         @include respond(small-tab) {
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
     }
 
-
+    &__heading3 {
+        font-size: 1.2rem;
+    }
 
     &__logo-img {
         background-color: $color-white--light;

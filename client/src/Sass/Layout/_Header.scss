@@ -17,7 +17,7 @@
     }
 
     &__logobox {
-        font-size: 1rem;
+        font-size: 1.2rem;
         margin: auto 0;
 
         a {
@@ -29,15 +29,15 @@
     &__logo {
         display: flex;
         align-items: center;
-        font-size: 1.3rem;
+        font-size: 1.6rem;
         font-weight: 500;
 
         @include respond(large-tab) {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
 
         @include respond(small-tab) {
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
 
     }
