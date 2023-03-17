@@ -1,8 +1,8 @@
 .btn {
 
     &__search-homepage {
-        width: 4rem;
-        height: 4rem;
+        width: 3rem;
+        height: 3rem;
         border: none;
         cursor: pointer;
 
@@ -11,18 +11,40 @@
         }
     }
 
+    &__movieCard-box {
+        font-size: 1.4;
+        color: $color-white--light;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        outline: none !important;
+        border: none;
+    }
+
+    &__addWatchlist {
+        font-size: 1.4rem;
+        margin-top: 3rem;
+
+    }
 
 
     &__movieCard,
-    &__teamCard {
-        border: none;
-        width: 50%;
-        padding: 1rem;
+    &__teamCard,
+    &__movieCardAdded {
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        padding: .5rem;
         background-color: transparent;
-        border-radius: 1rem;
-        color: inherit;
-        font-size: 1.2rem;
-        box-shadow: $box-shadow--btn-blue;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        color: $color-white--light;
+        font-size: 3rem;
+        border: 3px solid $color-blue;
         transition: .5s all;
         -webkit-transition: .5s all;
         -moz-transition: .5s all;
@@ -30,8 +52,8 @@
         -o-transition: .5s all;
         cursor: pointer;
 
+
         @include respond(small-tab) {
-            width: 100%;
             margin-bottom: 2rem;
         }
 
@@ -44,6 +66,8 @@
             color: $color-blue;
             box-shadow: $box-shadow--btn-white;
         }
+
+
     }
 
 
@@ -54,5 +78,25 @@
 
     &__teamCard {
         margin-top: 1rem;
+    }
+
+    &__movieCardAdded {
+        transition: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -ms-transition: none;
+        -o-transition: none;
+        margin-top: 2rem;
+
+        &:hover {
+            transform: none;
+            -webkit-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+            -o-transform: none;
+            -webkit-transform: none;
+            color: inherit;
+            box-shadow: $box-shadow--btn-blue;
+        }
     }
 }
