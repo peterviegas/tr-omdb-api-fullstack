@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import ComponentAbout from './About';
+import ComponentAbout from './about';
 
 describe('Testing for the about Component Label', () => {
     test(`When the About component is rendered, text This website must be present`, async () => {

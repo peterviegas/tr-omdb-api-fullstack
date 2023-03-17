@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ComponentHome from './Home';
+import ComponentHome from './home';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('Testing for the Home Component Label', () => {

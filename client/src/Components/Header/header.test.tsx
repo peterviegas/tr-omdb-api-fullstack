@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import ComponentHeader from './Header';
+import ComponentHeader from './header';
 import { BrowserRouter } from 'react-router-dom';
-import ComponentNavlink from '../Navlink/Navlink';
+import ComponentNavlink from '../Navlink/navlink';
 
 describe('Testing for the Header Component Label', () => {
     test(`When the component is rendered, then the Header Component must be present`, async () => {
