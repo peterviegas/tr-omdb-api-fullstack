@@ -19,12 +19,21 @@ export const getWishlistId = async (req: Request, res: Response) => {
 };
 
 export const createWishlistId = async (req: Request, res: Response) => {
-    const id = req.body.id;
-    const database = await createWishlistIdDatabase(id);
-    const isCreatedId = {
-        created: database.dataValues.movieId === null ? false : true,
-    };
-    res.status(200).json(isCreatedId);
+    try {
+        const id = req.body.id;
+        const database = await createWishlistIdDatabase(id);
+        const isCreatedId = {
+            created: database.dataValues.movieId === null ? false : true,
+        };
+        res.status(200).json(isCreatedId);
+    } catch (err: unknown) {
+        let message: string = "unknown error";
+        if (err instanceof Error) {
+            message = err.message;
+            res.status(400).json({ isCreatedId: false })
+        }
+    }
+
 };
 
 export const deleteWishlistId = async (req: Request, res: Response) => {
