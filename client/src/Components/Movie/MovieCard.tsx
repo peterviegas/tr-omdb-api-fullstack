@@ -14,11 +14,12 @@ const { errorFetch } = ErrorMessagesAPI;
 
 const noImage = require('../../Images/noImage.jpg');
 
-//id is imbdId from Ombd json
-// const id = 'tt0145487';
-// const url: string = `http://www.omdbapi.com/?i=${id}&type=movie&apikey=3fe67f82`;
-//`http://www.omdbapi.com/?i=${id}&apikey=3fe67f82`
-const MovieCard: React.FC = () => {
+interface MovieCardProp {
+    onClick: () => void;
+    addToWatchList: boolean;
+}
+
+const MovieCard: React.FC<MovieCardProp> = ({ onClick, addToWatchList }) => {
     const [selectedMovie, setSelectedMovie] =
         useState<MovieCardType>(defaultMovieCard);
     const [errorMsg, setErrorMsg] = useState<string>('');
@@ -130,7 +131,23 @@ const MovieCard: React.FC = () => {
                             <span> Actors:</span> {selectedMovie.Actors}
                         </p>
                     </div>
-                    <button className='btn__movieCard'>+ Wishlist</button>
+                    <button className='btn__movieCard-box' onClick={onClick}>
+                        {addToWatchList ? (
+                            <>
+                                <span className='btn__movieCard'>-</span>
+                                <span className='btn__addWatchlist'>
+                                    {'Watchlist'}
+                                </span>
+                            </>
+                        ) : (
+                            <>
+                                <span className='btn__movieCard'>+</span>
+                                <span className='btn__addWatchlist'>
+                                    {'Watchlist'}
+                                </span>
+                            </>
+                        )}
+                    </button>
                 </div>
                 <div className='movieCard__imgBox'>
                     <img
