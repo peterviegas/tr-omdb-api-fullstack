@@ -64,8 +64,8 @@ const MoviePage: React.FC = () => {
     //Delete from database
 
     const onClickHandler = (e: React.MouseEvent) => {
-        setAddToWatchList(false);
         e.preventDefault();
+        setAddToWatchList(false);
         const { pathname } = location;
         unselectedMovies(pathname.split('/')[2]);
     };

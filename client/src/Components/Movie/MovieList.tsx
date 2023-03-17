@@ -98,7 +98,9 @@ const MovieList: React.FC = () => {
                     alt='search icon'
                 />
                 <h3 className='heading__3'>
-                    {`Search Results for : ${searchedMovieName}`}
+                    {`Search Results for : ${searchedMovieName
+                        .split('%20')
+                        .join(' ')}`}
                 </h3>
             </div>
 
