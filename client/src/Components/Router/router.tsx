@@ -7,6 +7,7 @@ import ComponentAbout from '../About/About';
 import ComponentTeam from '../Team/ComponentTeam';
 import ComponentMovieProvider from '../Movie/MovieProvider';
 import ComponentMovieListProvider from '../Movie/MovieListProvider';
+import WatchList from '../WatchList/WatchList';
 
 const ComponentRouter = () => (
     <Routes>
@@ -20,7 +21,7 @@ const ComponentRouter = () => (
                 path={`/movie/:title/:id`}
                 element={<ComponentMovieProvider />}
             />
-            {/* <Route path='wishlist' element={} /> */}
+            <Route path='watchlist' element={<WatchList />} />
             <Route path='about' element={<ComponentAbout />} />
             <Route path='team' element={<ComponentTeam />} />
             <Route path='*' element={<NotFound />} />

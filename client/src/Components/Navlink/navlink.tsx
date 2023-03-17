@@ -46,12 +46,12 @@ const ComponentNavlink: React.FC = () => {
 
                     <li className='nav__item'>
                         <NavLink
-                            to='/wishlist'
+                            to='/watchlist'
                             className={({ isActive }) =>
                                 isActive ? 'link--active' : 'link'
                             }
                         >
-                            Wishlist
+                            Watchlist
                         </NavLink>
                     </li>
 
