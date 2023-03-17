@@ -11,13 +11,13 @@ test('Router Home', async () => {
     expect(screen.getByText(/Welcome to/i)).toBeInTheDocument();
 });
 
-test('Router Wishlist', async () => {
+test('Router Watchlist', async () => {
     render(
         <MemoryRouter initialEntries={['/movielist/Last Action Hero']}>
             <Router />
         </MemoryRouter>
     );
-    expect(screen.getByText(/Wishlist/i)).toBeInTheDocument();
+    expect(screen.getByText(/Watchlist/i)).toBeInTheDocument();
 });
 
 test('Router Movie', async () => {

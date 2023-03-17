@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { ComponentMainlayout } from './mainlayout';
+import { ComponentMainlayout } from './Mainlayout';
 
 describe('Testing for the ComponentMainlayout - - navigating to the component ComponentHeader', () => {
     test(`When the component is rendered, then the Home option must be present`, async () => {
@@ -19,7 +19,7 @@ describe('Testing for the ComponentMainlayout - - navigating to the component Co
                 <ComponentMainlayout />
             </BrowserRouter>
         );
-        const testWishlist = screen.getByText(/Wishlist/i);
+        const testWishlist = screen.getByText(/Watchlist/i);
         expect(testWishlist).toBeInTheDocument();
     });
 

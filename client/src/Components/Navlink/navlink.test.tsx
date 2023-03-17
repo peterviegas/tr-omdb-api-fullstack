@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import ComponentNavlink from './Navlink';
-import Header from '../Header/Header';
+import ComponentNavlink from './navlink';
+import Header from '../Header/header';
 
 describe('Testing for the Navlink Component Home', () => {
     test('renders Home', () => {
@@ -32,7 +32,7 @@ describe('Testing for the Navlink Component MoviesList', () => {
                 <Header />
             </BrowserRouter>
         );
-        const titleElement = screen.getByText(/Wishlist/i);
+        const titleElement = screen.getByText(/Watchlist/i);
         expect(titleElement).toBeInTheDocument();
     });
 
@@ -42,7 +42,7 @@ describe('Testing for the Navlink Component MoviesList', () => {
                 <ComponentNavlink />
             </BrowserRouter>
         );
-        const titleElement = screen.getByText(/Wishlist/i);
+        const titleElement = screen.getByText(/Watchlist/i);
         expect(titleElement).toBeInTheDocument();
     });
 });
