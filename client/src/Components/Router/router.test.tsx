@@ -11,13 +11,13 @@ test('Router Home', async () => {
     expect(screen.getByText(/Welcome to/i)).toBeInTheDocument();
 });
 
-test('Router Wishlist', async () => {
+test('Router Watchlist', async () => {
     render(
         <MemoryRouter initialEntries={['/movielist/Last Action Hero']}>
             <Router />
         </MemoryRouter>
     );
-    expect(screen.getByText(/Wishlist/i)).toBeInTheDocument();
+    expect(screen.getByText(/Watchlist/i)).toBeInTheDocument();
 });
 
 test('Router Movie', async () => {
@@ -27,7 +27,7 @@ test('Router Movie', async () => {
         </MemoryRouter>
     );
     expect(
-        screen.getByText(/Other movies of your search list/i)
+        screen.getByText(/Similar movies you may like/i)
     ).toBeInTheDocument();
 });
 
@@ -46,7 +46,7 @@ test('Router Team', async () => {
             <Router />
         </MemoryRouter>
     );
-    expect(screen.getByText(/Our Team/i)).toBeInTheDocument();
+    expect(screen.getByText(/Meet the Team/i)).toBeInTheDocument();
 });
 
 test('renders demonstrating 404 not found error when user navigates to an invalid path', () => {

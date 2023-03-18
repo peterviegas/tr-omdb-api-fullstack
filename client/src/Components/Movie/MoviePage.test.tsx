@@ -10,7 +10,7 @@ describe("Testing for the about Component MoviePage", () => {
             </BrowserRouter>
             );
 
-        const testHome = screen.getByText(/Other movies of your search list/i);
+        const testHome = screen.getByText(/Similar movies you may like/i);
         expect(testHome).toBeInTheDocument();
     });
 

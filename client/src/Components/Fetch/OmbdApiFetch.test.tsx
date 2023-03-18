@@ -1,5 +1,19 @@
 import { setupServer } from 'msw/node';
 import { rest } from 'msw';
+import express from "express";
+import { Request, Response }  from "express";
+
+const app = express();
+app.use(express.json());
+const router = express.Router();
+
+const getSearch = async (req: Request, res: Response) => {
+    res.status(500).send('Not Found');
+    return;
+}
+router.get('/search/:title', getSearch)
+app.use("/api/v1", router);
+
 
 const genre = 'action';
 const server = setupServer(
@@ -32,15 +46,19 @@ test('handles server error 500', async () => {
             }
         )
     );
+    //const res = await request(app).get('/api/v1/search/fake');
+    //expect(res.statusCode).toBe(500);
 });
 
-test('handles server error 404', async () => {
+test('handles server error 403', async () => {
     server.use(
         rest.get(
             `http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`,
             (req, res, ctx) => {
-                return res(ctx.status(404));
+                return res(ctx.status(403));
             }
         )
     );
+    //const res = await request(app).get(`http://www.omdbapi.com/?s=${genre}&type=movie&apikey=3fe67f82`);
+    //expect(res.statusCode).toBe(403);
 });
