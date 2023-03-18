@@ -2,106 +2,8 @@
 .page {
     width: 100%;
 
-    &--about-bg {
+    &__about-bg {
         background-image: $bg-aboutme;
-    }
-
-    &--team-bg {
-        background-image: $bg-team;
-    }
-
-    &__team-para {
-        background-color: transparent !important;
-        width: 50%;
-        align-self: flex-end;
-        display: flex;
-        flex-direction: column;
-        margin-top: 5rem;
-
-        @include respond(small-tab) {
-            width: 100%;
-        }
-
-    }
-
-    &__team-skills {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 4rem;
-    }
-
-    &__team-skillBox {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-
-        @include respond(small-tab) {
-            gap: 2rem;
-        }
-
-        @include respond(phone) {
-            flex-direction: column;
-            gap: 2rem;
-            margin-top: -2rem
-        }
-    }
-
-    &__team-skill {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.4rem;
-        width: 12rem;
-        height: 12rem;
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
-        border: 10px solid $color-white--lighter;
-        color: $color-electric-blue;
-        box-shadow: 0 0 1rem 0.0003rem $color-electric-blue;
-    }
-
-    &__team-descriptions {
-        width: 53%;
-        font-size: 1.1rem;
-        font-weight: 200;
-        margin-top: -35rem;
-        padding: 2rem;
-        hyphens: auto;
-        -webkit-hyphens: auto;
-        -moz-hyphens: auto;
-        -ms-hyphens: auto;
-
-        @include respond(small-tab) {
-            width: 100%;
-            margin-top: 2rem;
-
-        }
-
-        @include respond(phone) {
-
-            margin-top: 1rem
-        }
-    }
-
-
-
-    &__team-description {
-        margin-top: 12rem;
-        text-align: center;
-
-        @include respond(small-tab) {
-            width: 100%;
-            margin-top: 2rem;
-            text-align: center;
-
-        }
-
     }
 
     &__bg {
@@ -117,15 +19,21 @@
     }
 
     &__contents {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        padding: 8rem 3rem 0 3rem;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: 47% 50%;
+        row-gap: 2.5rem;
+        column-gap: 3%;
+        padding: 5rem 3rem;
 
-        @include respond(small-tab) {
-            padding: 8rem 1rem 0 1rem;
+        @include respond(large-tab) {
+            grid-template-rows: auto auto auto;
+            grid-template-columns: 100%;
+            column-gap: 0;
+        }
+
+        @include respond(small-tab-portrait) {
+            padding: 4rem 2rem;
         }
 
         @include respond(small-phone) {
@@ -134,87 +42,32 @@
 
         @include respond(phone) {
             padding: 1rem;
+            row-gap: 1rem;
         }
 
+    }
 
+    &__content1 {
+        grid-row: 1/2;
+        grid-column: 1/2;
+        font-weight: 200;
 
-
-        &--1 {
-            width: 100%;
-            font-weight: 200;
-        }
-
-        &--1a {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            padding: 0 2rem;
-
-            @include respond(large-tab) {
-                gap: 6rem;
-            }
-
-            @include respond(small-tab) {
-                gap: 3rem;
-            }
-
-            @include respond(large-tab-portrait) {
-                flex-direction: column;
-            }
-
-            @include respond(phone) {
-                padding: 0;
-            }
-
-            @include respond(small-phone) {
-                gap: .5rem;
-            }
-        }
-
-        &--2 {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            font-size: 1.2rem;
-            font-weight: 200;
-            margin-top: 5rem;
-            margin-bottom: 8rem;
-            padding: 0 2rem;
-
-            @include respond(phone) {
-                flex-direction: column;
-                padding: 0;
-                margin: 1rem 0
-            }
+        @include respond(large-tab) {
+            grid-column: 1/1;
+            grid-row: 1/2;
         }
     }
 
-
     &__textBox {
-        width: 50%;
-        align-self: flex-start;
-        background-color: #ffffff59;
-        padding: 2rem;
-
-        @include respond(small-tab) {
-            width: 60%;
-            align-self: center;
-        }
-
-        @include respond(large-tab-portrait) {
-            width: 80%;
-        }
-
-        @include respond(small-phone) {
-            width: 100%;
-        }
+        background-color: $color-grey--light;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
 
     }
 
     &__text--large {
-
-        width: 50%;
         height: 8rem;
         align-self: flex-start;
         font-size: 5rem;
@@ -232,26 +85,30 @@
             text-align: center;
         }
 
+        @include respond(phone) {
+            font-size: 4rem;
+        }
+
         @include respond(small-phone) {
-            height: 8rem;
-            font-size: 6rem;
+            font-size: 3rem;
+
         }
     }
 
-    &__para {
-        width: 50%;
+    &__content2 {
+        grid-row: 1/2;
+        grid-column: 2/3;
         background-color: $color-black;
-        padding: 1rem;
+        padding: 2rem;
 
-        @include respond(large-tab-portrait) {
-            width: 100%;
+        @include respond(large-tab) {
+            grid-column: 1/1;
+            grid-row: 2/3;
         }
-    }
 
-    &__details--2 {
-        background-color: $color-black;
-        padding: 1rem;
-        font-weight: 200;
+        @include respond(phone) {
+            padding: 1rem;
+        }
     }
 
     &__description {
@@ -264,6 +121,51 @@
             font-size: 1.2rem;
             font-weight: 200;
             margin-top: 1.2rem;
+
+            @include respond(phone) {
+                margin-top: .8rem;
+            }
+        }
+
+    }
+
+    &__content3 {
+        grid-row: 2/3;
+        grid-column: 1/3;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        font-size: 1.2rem;
+        font-weight: 200;
+        padding: 1rem;
+        background-color: $color-white--lighter;
+
+        @include respond(large-tab) {
+            grid-column: 1/1;
+            grid-row: 3/4;
+        }
+
+        @include respond(phone) {
+            flex-direction: column;
+            padding: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+    }
+
+    &__details--1 {
+        img {
+            height: 3rem;
+        }
+
+    }
+
+    &__details--2 {
+        padding: 1rem;
+        font-weight: 200;
+
+        @include respond(phone) {
+            padding: 0;
         }
 
     }
@@ -271,5 +173,6 @@
     &__bold {
         font-size: 1.4rem;
         font-weight: 600;
+        margin: 0 .8rem
     }
 }

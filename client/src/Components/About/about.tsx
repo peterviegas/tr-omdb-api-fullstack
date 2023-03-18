@@ -11,7 +11,7 @@ const ComponentAbout: React.FC = () => (
         <div className='page__contents'>
             <div className='page__content1'>
                 <div className='page__textBox'>
-                    <div className='page__text--large'>WELCOME-</div>
+                    <div className='page__text--large'>WELCOME</div>
                 </div>
             </div>
             <div className='page__content2'>
