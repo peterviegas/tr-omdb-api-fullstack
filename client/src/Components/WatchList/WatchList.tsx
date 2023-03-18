@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import RenderMoviesList from '../Movie/RenderMoviesList';
+import RenderWatchList from './RenderWatchList';
 import { OmdbApiFetch } from '../Fetch/OmbdApiFetch';
 import { MovieType } from '../Movie/Type/MovieType.type';
 import { ErrorMessagesAPI } from '../ErrorHandler/ErrorMessages';
 import { baseUrl } from '../Config/baseURL';
-import { useLocation, useNavigate, useRevalidator } from 'react-router-dom';
+import ErrorComponent from '../ErrorHandler/ErrorComponent';
 
 const { errorFetch } = ErrorMessagesAPI;
 
 const WatchList: React.FC = () => {
     const [watchlist, setWatchlist] = useState<Array<MovieType>>([]);
-
     const [error, setError] = useState<string>('');
-
-    const [searchedMovieName, setSearchedMovieName] = useState('');
 
     const fetchWatchListMovies = async () => {
         const response = await OmdbApiFetch<Array<string>>(
@@ -53,21 +50,10 @@ const WatchList: React.FC = () => {
         fetchWatchListMovies();
     }, []);
 
-    const onClickHandler = (e: React.SyntheticEvent) => {
-        const target = e.target;
-        if (target instanceof HTMLImageElement) {
-            const alt = target.alt;
-            setSearchedMovieName(alt);
-        }
-    };
-
     return (
         <div className='watchlist'>
-            <RenderMoviesList
-                movies={watchlist}
-                searchedMovieName={searchedMovieName}
-                onClick={onClickHandler}
-            />
+            <RenderWatchList movies={watchlist} />
+            {error && <ErrorComponent>{error}</ErrorComponent>}
         </div>
     );
 };
