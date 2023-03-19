@@ -1,6 +1,5 @@
 import React from 'react';
 const locationIcon = require('../../Images/location-pin.png');
-const welcomeImg = require('../../Images/welcome.png');
 
 const ComponentAbout: React.FC = () => (
     <div className='page page--about'>
