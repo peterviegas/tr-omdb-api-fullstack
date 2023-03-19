@@ -177,12 +177,7 @@
     &__content4 {
         grid-row: 3/4;
         grid-column: 1/3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 6rem;
-        border: 10px solid #ffffff33;
+
 
         @include respond(large-tab) {
             grid-row: 4/5;

@@ -5,6 +5,7 @@ import { MovieType } from '../Movie/Type/MovieType.type';
 import { ErrorMessagesAPI } from '../ErrorHandler/ErrorMessages';
 import { baseUrl } from '../Config/baseURL';
 import ErrorComponent from '../ErrorHandler/ErrorComponent';
+import MUIPagination from '../Pagination/MUIPagination';
 
 const { errorFetch } = ErrorMessagesAPI;
 
@@ -51,10 +52,16 @@ const WatchList: React.FC = () => {
     }, []);
 
     return (
-        <div className='watchlist'>
-            <RenderWatchList movies={watchlist} />
-            {error && <ErrorComponent>{error}</ErrorComponent>}
-        </div>
+        <>
+            <div className='heading__img'>
+                <h3 className='heading__3'> Movies in your watchlist :</h3>
+            </div>
+
+            <div className='watchlist'>
+                <RenderWatchList movies={watchlist} />
+                {error && <ErrorComponent>{error}</ErrorComponent>}
+            </div>
+        </>
     );
 };
 

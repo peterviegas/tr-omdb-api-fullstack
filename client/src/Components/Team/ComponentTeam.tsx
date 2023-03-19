@@ -63,15 +63,18 @@ const ComponentTeam: React.FC = () => (
                     </p>
                 </div>
                 <div className='team__content4'>
-                    {teamMembers.map((member, i) => (
-                        <TeamCard
-                            key={i + member.name}
-                            name={member.name}
-                            image={member.image}
-                            job={member.job}
-                            description={member.description}
-                        />
-                    ))}
+                    <div className='teamCard'>
+                        <h3 className='heading__3'>Our Team </h3>
+                        {teamMembers.map((member, i) => (
+                            <TeamCard
+                                key={i + member.name}
+                                name={member.name}
+                                image={member.image}
+                                job={member.job}
+                                description={member.description}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

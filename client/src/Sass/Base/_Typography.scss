@@ -1,11 +1,13 @@
 .heading {
     &__3 {
+        width: 100%;
         font-size: 2rem;
-        margin-top: 2rem;
-        padding: 1.5rem 0;
+        margin-top: 3rem;
+        padding: 1rem 0;
         text-align: center;
         letter-spacing: 1px;
         font-weight: 400;
+        background-color: $color-white--lighter;
 
         @include respond (large-tab-portrait) {
             font-size: 1.6rem;
@@ -14,9 +16,9 @@
     }
 
     &__img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 100%;
+        text-align: center;
+
 
         @include respond(large-tab-portrait) {
             margin-top: 2rem;

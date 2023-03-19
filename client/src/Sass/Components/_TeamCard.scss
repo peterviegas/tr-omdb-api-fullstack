@@ -1,0 +1,69 @@
+.teamCard {
+    width: 100%;
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    ß &__title {
+        color: $color-blue;
+    }
+
+    @include respond(small-tab) {}
+
+    &__member {
+        width: 40%;
+        display: flex;
+        gap: 2rem;
+        padding: 2rem;
+
+        @include respond(large-tab-portrait) {
+            width: 80%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include respond(small-tab-portrait) {
+            width: 90%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+    }
+
+    &__img {
+        width: 10rem;
+    }
+
+    &__details {
+        border-left: .01px solid $color-electric-blue;
+        padding-left: 1rem;
+
+        @include respond(small-tab-portrait) {
+            flex-direction: column;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        h3 {
+            border-bottom: .01px solid $color-electric-blue--light;
+
+        }
+
+        p {
+            padding: .5rem 0
+        }
+
+        p:not(:last-child) {
+            border-bottom: .01px solid $color-electric-blue--light;
+        }
+
+    }
+
+}
