@@ -3,17 +3,17 @@ import { NavLink } from 'react-router-dom';
 import { MovieType } from '../Movie/Type/MovieType.type';
 const noImage = require('../../Images/noImage.jpg');
 
-interface RenderMoviesListProp {
+interface RenderWatchListProp {
     movies: Array<MovieType>;
 }
 
-const RenderWatchList: React.FC<RenderMoviesListProp> = ({ movies }) => {
+const RenderWatchList: React.FC<RenderWatchListProp> = ({ movies }) => {
     return (
         <>
-            {movies.map((movie) => {
+            {movies.map((movie, i) => {
                 const { Title, Year, imdbID, Poster } = movie;
                 return (
-                    <div className='movielist__card'>
+                    <div key={imdbID} className='movielist__card'>
                         <div
                             key={imdbID}
                             className='movieList__item'
@@ -32,8 +32,8 @@ const RenderWatchList: React.FC<RenderMoviesListProp> = ({ movies }) => {
                                         alt={Title}
                                     />
                                 </div>
+                                <h6 className='movieList__heading'>{`${Title}, ${Year}`}</h6>
                             </NavLink>
-                            <button className='btn__movieList'>Remove</button>
                         </div>
                     </div>
                 );
