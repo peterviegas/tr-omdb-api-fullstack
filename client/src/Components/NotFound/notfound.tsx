@@ -1,14 +1,10 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import ErrorComponent from '../ErrorHandler/ErrorComponent';
 
-
-const ComponentNotFound: React.FC = () =>
-
-    <>
-
-        <h2 className="subtitle has-text-danger"> Error 404 : Not Found! </h2>
-        <li><NavLink to='/' > Go to Home </NavLink></li>
-
-    </>
+const ComponentNotFound: React.FC = () => (
+    <div className='error__container'>
+        <ErrorComponent>Error 404 : Not Found!</ErrorComponent>
+    </div>
+);
 
 export default ComponentNotFound;
