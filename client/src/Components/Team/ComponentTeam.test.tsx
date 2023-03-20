@@ -5,7 +5,7 @@ describe('Testing for the Team Component Label', () => {
     test(`When the component is rendered, then the Team Component must be present`, async () => {
         render(<ComponentTeam />);
 
-        const testHome = screen.getByText(/Our Team/i);
+        const testHome = screen.getByText(/Meet the Team/i);
 
         expect(testHome).toBeInTheDocument();
     });

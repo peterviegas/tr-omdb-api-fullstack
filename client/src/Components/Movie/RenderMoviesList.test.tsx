@@ -1,10 +1,14 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { act, renderHook } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import MoviePage from './MoviePage';
 import RenderMoviesList from './RenderMoviesList';
-import App from './../../App';
+import { MovieType } from './Type/MovieType.type';
+
+interface RenderMoviesListProp {
+    movies: Array<MovieType>;
+    searchedMovieName: string;
+    onClick: (e: React.MouseEvent) => void;
+}
 
 const movieArr = [
     {
@@ -79,30 +83,38 @@ const movieArr = [
     },
 ];
 
-test('temporary test for packet upload', () => {
-    render(<App />);
-    screen.queryByRole('class', { description: `movieList` });
-});
-
-/*
 describe("RenderMoviesList", () => {
-	test("Should match a snapshot", () => {
+    test("Render the RenderMoviesListProp component and return the number of movies", () => {
+        const onChange = jest.fn(() => "test");
+	    const mock: RenderMoviesListProp = {
+        movies: movieArr,
+        searchedMovieName: 'spdider man',
+		onClick:onChange
+	}
 		const { container } = render (
 			<BrowserRouter>
-				<ErrorMessagesAPI movie={movieArr} searchedMovieName='teste' />
+				<RenderMoviesList {...mock} />
 			</BrowserRouter>
 		)
-		expect(container).toMatchSnapshot();
-	})
-});*/
+		const testMovie = container.querySelectorAll('.movieList__img-container');
+	    expect(testMovie.length).toBe(10);
+	});
 
-/*
-test("Should match a snapshot", async () => {
-	const { result, waitFor } = renderHook(RenderMoviesList, {
-		wrapper: RenderMoviesList()
-	})
+    test("Render the RenderMoviesListProp component and check for the existence of the Looney Tunes title", () => {
+        const onChange = jest.fn(() => "test");
+	    const mock: RenderMoviesListProp = {
+        movies: movieArr,
+        searchedMovieName: 'spdider man',
+		onClick:onChange
+	}
+		render (
+			<BrowserRouter>
+				<RenderMoviesList {...mock} />
+			</BrowserRouter>
+		)
+        const testMovie = screen.getByText(/Looney Tunes: Back in Action, 2003/i);
+        expect(testMovie).toBeInTheDocument();
+	});
+});
 
-	// wait for the appointmenents to populate
-	await waitFor(() => result.current)
-})
-*/
+
