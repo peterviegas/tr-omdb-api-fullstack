@@ -5,7 +5,6 @@ import { MovieType } from '../Movie/Type/MovieType.type';
 import { ErrorMessagesAPI } from '../ErrorHandler/ErrorMessages';
 import { baseUrl } from '../Config/baseURL';
 import ErrorComponent from '../ErrorHandler/ErrorComponent';
-import MUIPagination from '../Pagination/MUIPagination';
 
 const { errorFetch } = ErrorMessagesAPI;
 
