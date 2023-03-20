@@ -134,16 +134,20 @@ const MovieCard: React.FC<MovieCardProp> = ({ onClick, addToWatchList }) => {
                     <button className='btn__movieCard-box' onClick={onClick}>
                         {addToWatchList ? (
                             <>
-                                <span className='btn__movieCard'>-</span>
-                                <span className='btn__addWatchlist'>
-                                    {'Watchlist'}
+                                <span className='btn__movieCard'>
+                                    -{' '}
+                                    <span className='btn__addWatchlist'>
+                                        {'Watchlist'}
+                                    </span>
                                 </span>
                             </>
                         ) : (
                             <>
-                                <span className='btn__movieCard'>+</span>
-                                <span className='btn__addWatchlist'>
-                                    {'Watchlist'}
+                                <span className='btn__movieCard'>
+                                    +
+                                    <span className='btn__addWatchlist'>
+                                        {'Watchlist'}
+                                    </span>
                                 </span>
                             </>
                         )}

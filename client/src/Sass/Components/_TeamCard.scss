@@ -1,23 +1,35 @@
 .teamCard {
-    width: 80%;
+    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    margin: 5rem 0;
-    gap: 6rem;
-    border: 10px solid #ffffff33;
-    padding: 5rem 1rem;
+    gap: 5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    &__title {
+        color: $color-blue;
+    }
 
     @include respond(small-tab) {
-        margin: 3rem 0;
+        gap: 2rem;
     }
 
     &__member {
+        width: 80%;
         display: flex;
         gap: 2rem;
+        margin-top: 3rem;
+
+        @include respond(large-tab-portrait) {
+            width: 80%;
+            flex-direction: column;
+            align-items: center;
+        }
 
         @include respond(small-tab-portrait) {
+            width: 90%;
             flex-direction: column;
             align-items: center;
         }
@@ -31,7 +43,7 @@
 
     &__details {
         border-left: .01px solid $color-electric-blue;
-        padding-left: 3rem;
+        padding-left: 1rem;
 
         @include respond(small-tab-portrait) {
             flex-direction: column;
@@ -41,17 +53,17 @@
 
         h3 {
             border-bottom: .01px solid $color-electric-blue--light;
-            padding: 1rem 0;
+
         }
 
         p {
-            padding: 1rem 0;
+            padding: .5rem 0
         }
 
         p:not(:last-child) {
             border-bottom: .01px solid $color-electric-blue--light;
         }
 
-
     }
+
 }

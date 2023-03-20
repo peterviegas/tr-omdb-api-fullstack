@@ -42,8 +42,6 @@
 
     }
 
-
-
     &__logo-img {
         background-color: $color-white--light;
         padding: .5rem;
@@ -52,8 +50,8 @@
         -moz-border-radius: 50%;
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
-
         margin-left: .5rem;
+        z-index: 1000;
 
         @include respond(large-tab) {
             padding: 0.3rem;

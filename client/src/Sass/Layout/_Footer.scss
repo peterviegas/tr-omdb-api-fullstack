@@ -4,7 +4,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 2px solid cyan;
+    border-top: 2px solid $color-electric-blue;
+
+    @include respond(small-phone) {
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+    }
+
 
     &__logobox {
         font-size: 1.2rem;

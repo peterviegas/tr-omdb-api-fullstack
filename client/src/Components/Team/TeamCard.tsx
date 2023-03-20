@@ -21,7 +21,6 @@ const TeamCard: React.FC<TeamCardProp> = ({
             <h3>{name}</h3>
             <p className='teamCard__title'>{job}</p>
             <p className='teamCard__description'>{description}</p>
-            <button className='btn__teamCard'>{'Contact'}</button>
         </div>
     </div>
 );

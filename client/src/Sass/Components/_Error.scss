@@ -1,6 +1,14 @@
 .error {
-    position: absolute;
-    top: 29rem;
     color: $color-error;
     font-weight: 300;
+    padding: 2rem;
+    text-align: center;
+
+    &__container {
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem
+    }
 }
