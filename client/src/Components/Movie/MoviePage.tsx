@@ -44,7 +44,7 @@ const MoviePage: React.FC = () => {
     const onClickMovieCardButtonHandler = async () => {
         if (addToWatchList === false) {
             const response = await PostToDb(`${baseUrl}/wishlist`, imdbID);
-            console.log(response.created, 'add', imdbID);
+
             if (response.created) {
                 setAddToWatchList(true);
             } else {
@@ -52,7 +52,7 @@ const MoviePage: React.FC = () => {
             }
         } else {
             const response = await DeleteFromDb(`${baseUrl}/wishlist`, imdbID);
-            console.log(response.deleted, 'delete', imdbID);
+
             if (response.deleted) {
                 setAddToWatchList(false);
             } else {
