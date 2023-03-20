@@ -1,26 +1,26 @@
 .teamCard {
     width: 100%;
     display: flex;
-    // flex-direction: column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     gap: 5rem;
-    padding: 0 1rem;
     font-size: 1.1rem;
     font-weight: 500;
 
-    ß &__title {
+    &__title {
         color: $color-blue;
     }
 
-    @include respond(small-tab) {}
+    @include respond(small-tab) {
+        gap: 2rem;
+    }
 
     &__member {
-        width: 40%;
+        width: 80%;
         display: flex;
         gap: 2rem;
-        padding: 2rem;
+        margin-top: 3rem;
 
         @include respond(large-tab-portrait) {
             width: 80%;
