@@ -21,23 +21,23 @@ const ComponentTeam: React.FC = () => (
                                 <span>Dedicated</span>
                             </div>
                             <div className='team__skill'>
-                                <span>Hard working</span>
+                                <span>Innovative</span>
                             </div>
                         </div>
                         <div className='team__skillBox'>
                             <div className='team__skill'>
-                                <span>Committed</span>
+                                <span>Creative</span>
                             </div>
                             <div className='team__skill'>
-                                <span>Loving</span>
+                                <span>Efficient</span>
                             </div>
                         </div>
                         <div className='team__skillBox'>
                             <div className='team__skill'>
-                                <span>Committed</span>
+                                <span>Resourceful</span>
                             </div>
                             <div className='team__skill'>
-                                <span>Loving</span>
+                                <span>Goal-driven</span>
                             </div>
                         </div>
                     </div>
