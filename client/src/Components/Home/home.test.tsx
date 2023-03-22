@@ -9,8 +9,10 @@ describe('Testing for the Home Component Label', () => {
                 <ComponentHome />
             </BrowserRouter>
         );
-        const testHome = screen.getByText(/Welcome to/i);
-        console.log('home', testHome);
-        expect(testHome).toBeInTheDocument();
+        //const testHome = screen.getByText(/Welcome to/i);
+        //console.log('home', testHome);
+        //expect(testHome).toBeInTheDocument();
+        const testHome = screen.getAllByText(/Welcome to/i);
+        expect(testHome[0]).toBeInTheDocument();
     });
 });

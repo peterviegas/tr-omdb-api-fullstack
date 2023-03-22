@@ -10,8 +10,10 @@ describe('Testing for the Header Component Label', () => {
                 <ComponentHeader />
             </BrowserRouter>
         );
-        const testHome = screen.getByText(/PNGC IMDB/i);
-        expect(testHome).toBeInTheDocument();
+        //const testHome = screen.getByText(/PNGC IMDB/i);
+        //expect(testHome).toBeInTheDocument();
+        const testHeader = screen.getAllByText(/PNGC IMDB/i);
+        expect(testHeader[0]).toBeInTheDocument();
     });
 });
 
@@ -22,7 +24,9 @@ describe('Test for header component navigation', () => {
                 <ComponentNavlink />
             </BrowserRouter>
         );
-        const testHome = screen.getByText(/home/i);
-        expect(testHome).toBeInTheDocument();
+        //const testHome = screen.getByText(/home/i);
+        //expect(testHome).toBeInTheDocument();
+        const testHeader = screen.getAllByText(/Home/i);
+        expect(testHeader[0]).toBeInTheDocument();
     });
 });

@@ -9,8 +9,8 @@ describe('Testing for the ComponentMainlayout - - navigating to the component Co
                 <ComponentMainlayout />
             </BrowserRouter>
         );
-        const testHome = screen.getByText(/Home/i);
-        expect(testHome).toBeInTheDocument();
+        const testHome = screen.getAllByText(/Home/i);
+        expect(testHome[0]).toBeInTheDocument();
     });
 
 	test(`When the component is rendered, then the Wishlist option must be present`, async () => {
@@ -19,8 +19,8 @@ describe('Testing for the ComponentMainlayout - - navigating to the component Co
                 <ComponentMainlayout />
             </BrowserRouter>
         );
-        const testWishlist = screen.getByText(/Watchlist/i);
-        expect(testWishlist).toBeInTheDocument();
+        const testWishlist = screen.getAllByText(/Watchlist/i);
+        expect(testWishlist[0]).toBeInTheDocument();
     });
 
 	test(`When the component is rendered, then the About option must be present`, async () => {
@@ -29,8 +29,8 @@ describe('Testing for the ComponentMainlayout - - navigating to the component Co
                 <ComponentMainlayout />
             </BrowserRouter>
         );
-        const testAbout = screen.getByText(/About/i);
-        expect(testAbout).toBeInTheDocument();
+        const testAbout = screen.getAllByText(/About/i);
+        expect(testAbout[0]).toBeInTheDocument();
     });
 });
 

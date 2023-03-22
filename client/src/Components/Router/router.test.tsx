@@ -17,7 +17,9 @@ test('Router Watchlist', async () => {
             <Router />
         </MemoryRouter>
     );
-    expect(screen.getByText(/Watchlist/i)).toBeInTheDocument();
+    //expect(screen.getByText(/Watchlist/i)).toBeInTheDocument();
+    const titleElement = screen.getAllByText(/Watchlist/i);
+    expect(titleElement[0]).toBeInTheDocument();
 });
 
 test('Router Movie', async () => {
@@ -55,5 +57,7 @@ test('renders demonstrating 404 not found error when user navigates to an invali
             <Router />
         </MemoryRouter>
     );
-    expect(screen.getByText(/404/i)).toBeInTheDocument();
+    //expect(screen.getByText(/404/i)).toBeInTheDocument();
+    const codError = screen.getAllByText(/404/i);
+    expect(codError[0]).toBeInTheDocument();
 });

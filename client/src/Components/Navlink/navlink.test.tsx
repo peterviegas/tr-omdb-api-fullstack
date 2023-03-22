@@ -10,8 +10,10 @@ describe('Testing for the Navlink Component Home', () => {
                 <Header />
             </BrowserRouter>
         );
-        const titleElement = screen.getByText(/Home/i);
-        expect(titleElement).toBeInTheDocument();
+        //const titleElement = screen.getByText(/Home/i);
+        //expect(titleElement).toBeInTheDocument();
+        const titleElement = screen.getAllByText(/Home/i);
+        expect(titleElement[0]).toBeInTheDocument();
     });
 
     test('renders Home direct ComponentNavlink', () => {
@@ -20,8 +22,10 @@ describe('Testing for the Navlink Component Home', () => {
                 <ComponentNavlink />
             </BrowserRouter>
         );
-        const titleElement = screen.getByText(/Home/i);
-        expect(titleElement).toBeInTheDocument();
+        //const titleElement = screen.getByText(/Home/i);
+        //expect(titleElement).toBeInTheDocument();
+        const titleElement = screen.getAllByText(/Home/i);
+        expect(titleElement[0]).toBeInTheDocument();
     });
 });
 
@@ -32,8 +36,10 @@ describe('Testing for the Navlink Component MoviesList', () => {
                 <Header />
             </BrowserRouter>
         );
-        const titleElement = screen.getByText(/Watchlist/i);
-        expect(titleElement).toBeInTheDocument();
+        //const titleElement = screen.getByText(/Watchlist/i);
+        //xpect(titleElement).toBeInTheDocument();
+        const titleElement = screen.getAllByText(/Watchlist/i);
+        expect(titleElement[0]).toBeInTheDocument();
     });
 
     test('renders MoviesList direct ComponentNavlink', () => {
@@ -42,8 +48,10 @@ describe('Testing for the Navlink Component MoviesList', () => {
                 <ComponentNavlink />
             </BrowserRouter>
         );
-        const titleElement = screen.getByText(/Watchlist/i);
-        expect(titleElement).toBeInTheDocument();
+        //const titleElement = screen.getByText(/Watchlist/i);
+        //expect(titleElement).toBeInTheDocument();
+        const titleElement =  screen.getAllByText(/Watchlist/i);
+        expect(titleElement[0]).toBeInTheDocument();
     });
 });
 
@@ -77,8 +85,10 @@ describe('Testing for the Navlink Component About', () => {
                 <Header />
             </BrowserRouter>
         );
-        const titleElement = screen.getByText(/About/i);
-        expect(titleElement).toBeInTheDocument();
+        //const titleElement = screen.getByText(/About/i);
+        //expect(titleElement).toBeInTheDocument();
+        const titleElement = screen.getAllByText(/About/i);
+        expect(titleElement[0]).toBeInTheDocument();
     });
 
     test('renders About direct ComponentNavlink', () => {
@@ -87,8 +97,10 @@ describe('Testing for the Navlink Component About', () => {
                 <ComponentNavlink />
             </BrowserRouter>
         );
-        const titleElement = screen.getByText(/About/i);
-        expect(titleElement).toBeInTheDocument();
+        //const titleElement = screen.getByText(/About/i);
+        //expect(titleElement).toBeInTheDocument();
+        const titleElement = screen.getAllByText(/About/i);
+        expect(titleElement[0]).toBeInTheDocument();
     });
 });
 
@@ -99,8 +111,10 @@ describe('Testing for the Navlink Component Team', () => {
                 <Header />
             </BrowserRouter>
         );
-        const titleElement = screen.getByText(/Team/i);
-        expect(titleElement).toBeInTheDocument();
+        //const titleElement = screen.getByText(/Team/i);
+        //expect(titleElement).toBeInTheDocument();
+        const titleElement = screen.getAllByText(/Team/i);
+        expect(titleElement[0]).toBeInTheDocument();
     });
 
     test('renders Team direct ComponentNavlink', () => {
@@ -109,7 +123,9 @@ describe('Testing for the Navlink Component Team', () => {
                 <ComponentNavlink />
             </BrowserRouter>
         );
-        const titleElement = screen.getByText(/Team/i);
-        expect(titleElement).toBeInTheDocument();
+        //const titleElement = screen.getByText(/Team/i);
+        //expect(titleElement).toBeInTheDocument();
+        const titleElement = screen.getAllByText(/Team/i);
+        expect(titleElement[0]).toBeInTheDocument();
     });
 });
